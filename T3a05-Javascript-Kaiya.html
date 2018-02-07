@@ -1,10 +1,13 @@
 <h1 align=center>Javascript by Kaiya</h1>
 <br>
+x= <input id="myText01" type=text value=6 size=4>
+<br>
+<br>
 <input type=button value="if x < 6" onclick="{
 
    myTemp=''
 
-   x=5
+   x= document.getElementById('myText01').value
    if(x > 6){ myTemp+='larger than 6<br>' }
       else{ myTemp+='less than 6<br>' }
   
@@ -20,9 +23,9 @@
 
    myTemp=''
 
-   x=6
+   x=document.getElementById('myText01').value
    if(x == 6){ myTemp+='equals 6<br>' }
-      else{ myTemp+='less than 6<br>' }
+      else{ myTemp+='less or larger than 6<br>' }
   
    document.getElementById('myDiv02').innerHTML = myTemp
 
@@ -36,7 +39,7 @@
 
    myTemp=''
 
-   x=5
+   x=document.getElementById('myText01').value
    if(x <= 6){ myTemp+='less than or equal to 6<br>' }
       else{ myTemp+='larger than 6<br>' }
   
@@ -52,7 +55,7 @@
 
    myTemp=''
 
-   x=7
+   x=document.getElementById('myText01').value
    if(x >= 6){ myTemp+='larger than or equal to 6<br>' }
       else{ myTemp+='less than 6<br>' }
   
@@ -68,7 +71,7 @@
 
    myTemp=''
 
-   x=8
+   x=document.getElementById('myText01').value
    if(x != 6){ myTemp+='larger than 6<br>' }
       else{ myTemp+='less than 6<br>' }
   
@@ -84,9 +87,9 @@
 
    myTemp=''
 
-   x=5
-   if((x <= 6)||(x >= 6)){ myTemp+='less than or equal to 6<br>' }
-      else{ myTemp+='larger than or equal to 6<br>' }
+   x=document.getElementById('myText01').value
+   if((x <= 6)||(x >= 6)){ myTemp+='larger than or equal to 6<br>' }
+      else{ myTemp+='less than or equal to 6<br>' }
   
    document.getElementById('myDiv06').innerHTML = myTemp
 
@@ -100,7 +103,7 @@
 
    myTemp=''
 
-   x=9
+   x=document.getElementById('myText01').value
    if((x <= 6)&(x >= 6)){ myTemp+='larger than or equal to 6<br>' }
        else{ myTemp+='any number<br>' }
   
@@ -116,7 +119,7 @@
 
    myTemp=''
 
-   x=8
+   x=document.getElementById('myText01').value
    if((x == 8)||(x == 12)){ myTemp+='equal to 8<br>' }
       else{ myTemp+='equal to 12<br>' }
   
@@ -132,7 +135,7 @@
 
    myTemp=''
 
-   x=5
+   x=document.getElementById('myText01').value
    if(x > 6){ myTemp+='larger than 6<br>'}
    if(x > 3){myTemp+='larger than 3<br>'}
   
@@ -148,7 +151,7 @@
 
    myTemp=''
 
-   x=9
+   x=document.getElementById('myText01').value
    if(x > 6){ myTemp+='larger than 6<br>' }
       else{ myTemp+='less than 6<br>' }
   
@@ -158,4 +161,4 @@
 }">
 <br>
 <div id="myDiv10" ></div>
- 
+<br>
