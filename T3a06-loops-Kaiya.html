@@ -1,6 +1,6 @@
 <h1 align=center>Loops by Kaiya</h1>
 <br>
-x= <input id="myText01" type=text value=10 size=4>
+x= <input id="myText01" type=text value=1000 size=4>
 <br>
 <br>
 <input type=button value="Loop" onclick="{
@@ -8,15 +8,23 @@ x= <input id="myText01" type=text value=10 size=4>
    myTemp=''
    myInput= document.getElementById('myText01').value
 
+   var myMinutes = new Date()
+   myTemp += myMinutes.getMinutes() + ' min <br>'
+
    for (myLoop = 1; myLoop <= myInput; myLoop++) {
 
-   myTemp += myLoop + ', '+myInput + '<br>'
+     myTemp += myLoop + ', '+myInput + '<br>'
    
    }
+   
+   var myMinutes2 = new Date();
+   myTotal = (myMinutes2 - myMinutes)/1000
+
+   myTemp += myMinutes2.getMinutes() + ' min <br> duration = '+
+     myTotal +' seconds <br>'
   
+
    document.getElementById('myDiv01').innerHTML = myTemp
-
-
 }">
 <br>
 <div id="myDiv01" ></div>
