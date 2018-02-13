@@ -4,28 +4,64 @@ x= <input id="myText01" type=text value=1000 size=4>
 <br>
 <br>
 <input type=button value="Loop" onclick="{
-
    myTemp=''
    myInput= document.getElementById('myText01').value
-
    var myMinutes = new Date()
    myTemp += myMinutes.getMinutes() + ' min <br>'
-
    for (myLoop = 1; myLoop <= myInput; myLoop++) {
-
      myTemp += myLoop + ', '+myInput + '<br>'
    
    }
    
    var myMinutes2 = new Date();
    myTotal = (myMinutes2 - myMinutes)/1000
-
    myTemp += myMinutes2.getMinutes() + ' min <br> duration = '+
      myTotal +' seconds <br>'
   
-
    document.getElementById('myDiv01').innerHTML = myTemp
 }">
 <br>
+<h2>Slideshow</h2>
+<br>
 <div id="myDiv01" ></div>
+<br>
+<div>
+ <img id="image1" />
+</div>
 
+<script>
+    var imgArray = [
+        'http://a57.foxnews.com/images.foxnews.com/content/fox-news/lifestyle/2017/11/09/how-to-keep-cat-from-scratching-your-sofa-to-shreds/_jcr_content/par/featured_image/media-0.img.jpg/931/524/1510172827500.jpg?ve=1&tl=1&text=big-top-image',
+        'https://images.huffingtonpost.com/2016-05-30-1464600256-1952992-cutecatnames-thumb.jpg',
+        'http://www.petsworld.in/blog/wp-content/uploads/2014/09/cute-kittens.jpg'],
+        curIndex = 0;
+        imgDuration = 5000;
+
+    function slideShow() {
+        document.getElementById('image1').src = imgArray[curIndex];
+        curIndex++;
+        if (curIndex == imgArray.length) { curIndex = 0; }
+        setTimeout("slideShow()", imgDuration);
+    }
+    slideShow();
+</script>
+<br>
+<p>Click the button to see if i is less than 5</p>
+
+
+<button onclick="myFunction()">Loop while</button>
+
+<p id="while"></p>
+
+<script>
+function myFunction() {
+    var text = "";
+    var i = 0;
+    while (i < 5) {
+        text += "<br>The number is " + i;
+        i++;
+    }
+   
+    document.getElementById("while").innerHTML = text;
+}
+</script>
