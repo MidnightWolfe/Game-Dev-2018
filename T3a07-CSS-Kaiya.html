@@ -1,10 +1,10 @@
 <style>
 body {
-    color: #000000;
+    color: white;
 }
 
 h1 {
-    color: #008B8B;
+    color: #00CED1;
 }
 
 p.ex {
@@ -32,7 +32,7 @@ p.ex {
 <br>
 <p> Regular paragraph </p>
 
-<p class="ex"> This is a paragrapg with class="ex".</p>
+<p class="ex"> This is a paragraph with class="ex".</p>
 <br>
 
 <style> 
@@ -66,10 +66,14 @@ div {
 <br>
 <head>
 <style>
+body {
+    background-image: url("http://wallpaperlepi.com/wp-content/uploads/2014/08/Mountain-Landscape-Wallpaper-Background1.jpg");
+}
 h1 {
     border-style: solid;
     border-color: teal;
     border-width: thin;
+    letter-spacing: 4px;
 }
 
 div {
@@ -79,7 +83,47 @@ div {
 }
 </style>
 </head>
+<body>
 <br>
+<head>
+<style>
+p.a {
+    font: 12px arial, sans-serif;
+}
 
-background-image
-list-style-image
+p.b {
+    font: italic bold 12px/35px Georgia, serif;
+}
+</style>
+</head>
+<body>
+<p class="a">This is a paragraph. The font size is set to 12 pixels, and the font family is Arial.</p>
+
+<p class="b">This is a paragraph. The font is set to italic and bold, the font size is set to 12 pixels, the line height is set to 30 pixels, and the font family is Georgia.</p>
+
+</body>
+<style>
+.move {cursor: move;}
+p.ex {
+      margin: 36px;
+}
+</style>
+
+
+<body>
+<p class="move">move</p>
+</body>
+Move changes the cursor
+<br>
+What I have done:
+<ol>
+<li>Background image
+<li>Borders (Div and heading)
+<li>Changed cursor on a word
+<li>Changed font
+<li>Changed font to bold and italic
+<li>Made animated box
+<li>Changed colors
+<li>Made a list
+<li>Changed Letter spacing on h1
+<li>Changed Margin on p.ex
