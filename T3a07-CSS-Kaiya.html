@@ -1,0 +1,85 @@
+<style>
+body {
+    color: #000000;
+}
+
+h1 {
+    color: #008B8B;
+}
+
+p.ex {
+    color: #A0522D;
+}
+
+</style>
+
+
+<h1 align=center> CSS by Kaiya </h1>
+
+<div id="myDiv01" style="position:absolute; left:500; top:50;" >Kaiya</div>
+
+3 links to CSS references
+
+<li><a href="https://www.w3schools.com/cssref/">https://www.w3schools.com/cssref/</a>
+<li><a href="https://www.tutorialspoint.com/css/index.htm">https://www.tutorialspoint.com/css/index.htm</a>
+<li><a href="http://www.htmldog.com/guides/css/beginner/">http://www.htmldog.com/guides/css/beginner/</a>
+<br>
+
+<input type=button value="click me" style="background-color:blue; color:yellow;" onclick="{
+   alert('It works')
+}">
+<br>
+<br>
+<p> Regular paragraph </p>
+
+<p class="ex"> This is a paragrapg with class="ex".</p>
+<br>
+
+<style> 
+div {
+    width: 50;
+    height: 50;
+    background: red;
+    position: absolute;
+    -webkit-animation: myfirst 5s 2; /* Safari 4.0 - 8.0 */
+    -webkit-animation-direction: alternate; /* Safari 4.0 - 8.0 */
+    animation: myfirst 5s 2;
+    animation-direction: alternate;
+}
+
+@-webkit-keyframes myfirst {
+    0%   {background: red; left: 100; top: 100;}
+    25%  {background: yellow; left: 500; top: 100;}
+    50%  {background: blue; left: 500; top: 500;}
+    75%  {background: green; left: 100; top: 500;}
+    100% {background: red; left: 100; top: 100;}
+}
+
+@keyframes myfirst {
+    0%   {background: red; left: 100; top: 50;}
+    25%  {background: yellow; left: 500; top: 100;}
+    50%  {background: blue; left: 500; top: 500;}
+    75%  {background: green; left: 100; top: 500;}
+    100% {background: red; left: 100; top: 100;}
+}
+</style>
+<br>
+<head>
+<style>
+h1 {
+    border-style: solid;
+    border-color: teal;
+    border-width: thin;
+}
+
+div {
+    border-style: solid;
+    border-color: black;
+    border-width: medium;
+}
+</style>
+</head>
+<br>
+
+background-image
+list-style-image
