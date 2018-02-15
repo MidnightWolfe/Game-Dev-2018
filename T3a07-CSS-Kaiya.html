@@ -108,13 +108,23 @@ p.ex {
       margin: 36px;
 }
 </style>
-
-
-<body>
-<p class="move">move</p>
-</body>
-Move changes the cursor
+<style>
+input.ex, [contenteditable] {
+  caret-color: blue;
+}
+</style>
+<input value="Default (Black) caret color">
 <br>
+
+<input class="ex" value="Custom (Blue) caret color">
+
+<p contenteditable>This paragraph can be edited. This caret/ cursor color is different as well.</p>
+<br>
+
+
+
+
+
 What I have done:
 <ol>
 <li>Background image
@@ -127,3 +137,5 @@ What I have done:
 <li>Made a list
 <li>Changed Letter spacing on h1
 <li>Changed Margin on p.ex
+<li>Custom Caret Color
+<li>Editable paragraph
