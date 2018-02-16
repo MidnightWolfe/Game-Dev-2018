@@ -1,11 +1,38 @@
 <h1 align=center>Pixels by Kaiya</h1>
 <br>
 <br>
-<input type=button value="go Right" onclick="{
+<input type=button value="Go right" onclick="{
 
   document.getElementById('myDiv01').style.left = parseInt(document.getElementById('myDiv01').style.left) + 6
 
 }">
 
 <div id="myDiv01" style="position:absolute; left: 20px; top:80px" >Kaiya</div>
+<br>
+<br>
+<input type=button value="Go left" onclick="{
+
+  document.getElementById('myDiv02').style.left = parseInt(document.getElementById('myDiv02').style.left) - 6
+
+}">
+
+<div id="myDiv02" style="position:absolute; left: 20px; top:300px" >Kaiya</div>
+<br>
+<br>
+<input type=button value="Go up" onclick="{
+
+  document.getElementById('myDiv03').style.top = parseInt(document.getElementById('myDiv03').style.top) - 8
+
+}">
+
+<div id="myDiv03" style="position:absolute; left: 800px; top:300px" >Kaiya</div>
+<br>
+<br>
+<input type=button value="Go down" onclick="{
+
+  document.getElementById('myDiv04').style.top = parseInt(document.getElementById('myDiv04').style.top) + 8
+
+}">
+
+<div id="myDiv04" style="position:absolute; left: 80px; top:400px" >Kaiya</div>
 <br>
