@@ -34,20 +34,12 @@ Click Web by Kaiya
 }">
 <div id="myDiv03" ></div>
 <br>
-<ol>
-<li>Why
-<li>do
-<li>this
-</ol>
+<input type=button value="Table" onclick="{
+	document.getElementById('myDiv04').innerHTML = '<table border=1> <tr> <th>First Name</th><th>Middle Name</th><th>Last Name</th> </tr> <td>Kaiya</td> <td>J.</td> <td>W.</td> </table><br>'
+}">
+<div id="myDiv04" ></div>
 <br>
-<table border=1>
-<tr>
-	<th>First Name</th>
-	<th>Middle Name</th>
-	<th>Last Name</th>
-</tr>
-<td>Kaiya</td>
-<td>J.</td>
-<td>W.</td>
-</table>
-<br> 
+<input type=button value="List" onclick="{
+	document.getElementById('myDiv05').innerHTML = '<ol> <li>Why <li>do <li>this</ol><br>'
+}">
+<div id="myDiv05" ></div>
