@@ -728,8 +728,8 @@ async function myTest01(){
  const i = new dl.Array1D.new([0.1, 0.8])
  const b = dl.Scalar.new(2.1)
 
- await myTensorTable('myDiv01', w, 2, 'w as weights')  
- await myTensorTable('myDiv01', i, 2, 'i as inputs ')  
+ await myTensorTable('myDiv11', w, 2, 'w as weights')  
+ await myTensorTable('myDiv11', i, 2, 'i as inputs ')  
 
  document.getElementById('myDiv11').innerHTML += 'b as Bias= '+ b.getValues()  +'<br><Br>'
  
