@@ -231,7 +231,549 @@ Solve for x=<input id="myText14" type="text" value="4"><br><br><br>
 }"><br>
 
 <div id="myDiv06">...</div>
+<br>
+<br>
+<input id="myButton01" type="button" value="Real Life Use of Matrix Math" onclick="{
 
+    class myNDArrayMath extends dl.NDArrayMath {
+       inverse2DSquare(b)  {       
+          var myInverseMultiplier  = 1 / ( (b.getValues()[0] * b.getValues()[3]) - (b.getValues()[1] * b.getValues()[2]) )
+          var myMatrixConverted = dl.Array2D.new([2, 2], [b.getValues()[3]*myInverseMultiplier, b.getValues()[1]*-1*myInverseMultiplier, b.getValues()[2]*-1*myInverseMultiplier, b.getValues()[0]*myInverseMultiplier])
+          return myMatrixConverted
+      }
+   }
+
+   document.getElementById('myDiv07').innerHTML = 'deeplearnjs Version = ' + dl.version + '<br><br>'
+
+   var myMath = dl.ENV.math;
+   var myClass = new myNDArrayMath()                                                                           
+   document.getElementById('myDiv07').innerHTML += 'Child $3.00 bus, $3.50 train, Adult $3.20 bus, $3.60 train <br>' 
+   document.getElementById('myDiv07').innerHTML += 'Total bus = $118.40, Total train = $135.20. How many Children and Adults? <br><br>' 
+
+   var myMatrixOriginal = dl.Array2D.new([2, 2], [3, 3.5, 3.2, 3.6]);
+   var myVector1D = dl.Array1D.new([118.4, 135.2]);
+
+   var myResult1 = myClass.inverse2DSquare(myMatrixOriginal)
+   document.getElementById('myDiv07').innerHTML += 'Intermediate Inverse Matrix shape = ' + myResult1.shape+ ' Intermediate Values = ' + myResult1.getValues() +'<br>'   
+
+   var myResult2 =  myMath.vectorTimesMatrix(myVector1D, myResult1);
+   document.getElementById('myDiv07').innerHTML +=   'Final Result shape:'+ myResult2.shape  +   ',  Train and Bus results: Children = ' + Math.round(myResult2.getValues()[0]) +   ',  Adults = '  +  Math.round(myResult2.getValues()[1])                                            
+
+}"><br>
+
+
+<div id="myDiv07">...</div><br>
+<br>
+<script>
+
+  
+const TRAIN_TEST_RATIO = 5 / 6;
+const LEARNING_RATE = .05;
+const BATCH_SIZE = 64;
+const TRAIN_STEPS = 100;
+const IMAGE_SIZE = 784;
+const LABELS_SIZE = 10;
+
+
+const myMath = dl.ENV.math;
+
+var myData;
+
+const weights = dl.variable(dl.Array2D.randNormal([IMAGE_SIZE, LABELS_SIZE], 0, 1 / Math.sqrt(IMAGE_SIZE), 'float32'));
+
+const optimizer = new dl.SGDOptimizer(LEARNING_RATE);
+
+
+const mnistConfig = {
+    'data': [
+        {
+            'name': 'images',
+            'path': 'https://storage.googleapis.com/learnjs-data/model-builder/' +
+                'mnist_images.png',
+            'dataType': 'png',
+            'shape': [28, 28, 1]
+        },
+        {
+            'name': 'labels',
+            'path': 'https://storage.googleapis.com/learnjs-data/model-builder/' +
+                'mnist_labels_uint8',
+            'dataType': 'uint8',
+            'shape': [10]
+        }
+    ],
+    modelConfigs: {}
+};
+
+
+
+///////////////////////// End Initilizations //////////////////////////////////////////////////
+
+// Main class that is used
+class MnistData {   
+    
+    constructor() {
+        this.shuffledTrainIndex = 0;
+        this.shuffledTestIndex = 0;
+    }
+    
+    
+    nextTrainBatch(batchSize) {
+        return this.nextBatch(batchSize, this.trainingData, () => {
+            this.shuffledTrainIndex = (this.shuffledTrainIndex + 1) % this.trainIndices.length;
+            return this.trainIndices[this.shuffledTrainIndex];
+        });
+    }
+    
+    
+    
+    nextTestBatch(batchSize) {
+        return this.nextBatch(batchSize, this.testData, () => {
+            this.shuffledTestIndex =
+                (this.shuffledTestIndex + 1) % this.testIndices.length;
+            return this.testIndices[this.shuffledTestIndex];
+        });
+    }
+    
+    
+    
+    nextBatch(batchSize, myData, index) {
+        let xs = null;
+        let labels = null;
+        for (let i = 0; i < batchSize; i++) {
+            const idx = index();
+            const x = myData[0][idx].reshape([1, 784]);
+            xs = concatWithNulls(xs, x);
+            const label = myData[1][idx].reshape([1, 10]);
+            labels = concatWithNulls(labels, label);
+        }
+        return { xs, labels };
+    }
+   
+    // Load all the MNIST data 
+    async load() {
+        this.dataset = new dl.XhrDataset(mnistConfig);
+        await this.dataset.fetchData();
+        this.dataset.normalizeWithinBounds(0, -1, 1);
+        this.trainingData = this.getTrainingData();
+        this.testData     = this.getTestData();
+        this.trainIndices = dl.util.createShuffledIndices(this.trainingData[0].length);
+        this.testIndices  = dl.util.createShuffledIndices(this.testData[0].length);
+    }
+    
+    
+    getTrainingData() {
+        const [images, labels] = this.dataset.getData();
+        const end = Math.floor(TRAIN_TEST_RATIO * images.length);
+        return [images.slice(0, end), labels.slice(0, end)];
+    }
+    
+    
+    getTestData() {
+        const myData = this.dataset.getData();
+        if (myData == null) { return null; }
+        const [images, labels] = this.dataset.getData();
+        const start = Math.floor(TRAIN_TEST_RATIO * images.length);
+        return [images.slice(start), labels.slice(start)];
+    }
+    
+}  // end of class MnistData  definition
+
+
+// A helper for the NextBatch function above
+function concatWithNulls(ndarray1, ndarray2) {
+    if (ndarray1 == null && ndarray2 == null) {
+        return null;
+    }
+    if (ndarray1 == null) {
+        return ndarray2;
+    }
+    else if (ndarray2 === null) {
+        return ndarray1;
+    }
+    return myMath.concat2D(ndarray1, ndarray2, 0);
+}
+
+
+ 
+/////////////////////////// End of the Class Definition and Helper function ///////////////
+
+
+ 
+
+
+// Train the model.
+async function train(myData) {
+    const returnCost = true;
+    for (let i = 0; i < TRAIN_STEPS; i++) {
+        const cost = optimizer.minimize(() => {
+            const batch = myData.nextTrainBatch(BATCH_SIZE);
+            return myMath.mean(myMath.softmaxCrossEntropyWithLogits(batch.labels, myMath.matMul(batch.xs, weights)));
+        }, returnCost);
+        document.getElementById('message').innerHTML = 'loss[' + i + ']:' +  cost.dataSync()
+        await dl.util.nextFrame();
+    }
+}
+
+
+
+
+
+/////////////////////////////////// End Training the Machine /////////////////////////////////////////////////////////////
+
+
+
+
+// Predict the digit number from a batch of input images.
+function predict(x) {
+    const pred = myMath.scope(() => {
+        const axis = 1;
+        return myMath.argMax(myMath.matMul(x, weights), axis);
+    });
+    return Array.from(pred.dataSync());
+}
+
+
+async function showTestResults(batch, predictions, labels) {
+    var testExamples = batch.xs.shape[0];
+    var totalCorrect = 0;
+    for (var i = 0; i < testExamples; i++) {
+        var image = myMath.slice2D(batch.xs, [i, 0], [1, batch.xs.shape[1]]);
+        var div = document.createElement('div');
+        div.className = 'pred-container';
+        var canvas = document.createElement('canvas');
+        draw(image.flatten(), canvas);
+        var pred = document.createElement('div');
+        var prediction = predictions[i];
+        var label = labels[i];
+        var correct = prediction === label;
+        if (correct) {
+            totalCorrect++;
+        }
+        pred.className = "pred " + (correct ? 'pred-correct' : 'pred-incorrect');
+        pred.innerText = "pred: " + prediction;
+        
+        div.appendChild(pred);
+        div.appendChild(canvas);
+        document.getElementById('images').appendChild(div);
+    }
+    var accuracy = 100 * totalCorrect / testExamples;
+    var displayStr = 'Accuracy: ' + accuracy.toFixed(2) + ' % (' + totalCorrect + ' / ' + testExamples + ')';
+    document.getElementById('message').innerHTML += '<br>'+ displayStr + '<br>';
+    //console.log(displayStr);
+}
+
+
+
+function draw(image, canvas) {
+    const [width, height] = [28, 28];
+    canvas.width = width;
+    canvas.height = height;
+    const ctx = canvas.getContext('2d');
+    const imageData = new ImageData(width, height);
+    const myData = image.dataSync();
+    for (let i = 0; i < height * width; ++i) {
+        const j = i * 4;
+        imageData.data[j + 0] = myData[i] * 255;
+        imageData.data[j + 1] = myData[i] * 255;
+        imageData.data[j + 2] = myData[i] * 255;
+        imageData.data[j + 3] = 255;
+    }
+    ctx.putImageData(imageData, 0, 0);
+}
+
+/////////////////////////// End Drawing the Images //////////////////////////////////////
+
+
+// Main Entry point
+async function myMnist() {
+    
+    // Load Mnist Dataset
+    document.getElementById('status').innerText = ' Loading...'
+    myData = new MnistData(); 
+    await myData.load();      
+    
+    // Train the network
+    document.getElementById('status').innerText += ' Training...'
+    await train(myData);
+    
+    // Make some predictions, testing the network
+    
+    document.getElementById('images').innerText = ''  
+    document.getElementById('status').innerText += ' Testing...';
+    const testExamples = 50;
+    const batch = myData.nextTestBatch(testExamples);
+    const predictions = predict(batch.xs);
+
+    // Given a logits or label vector, return the class indices.
+    const axis = 1;
+    const pred = myMath.argMax(batch.labels, axis);
+    const labels = Array.from(pred.dataSync());
+    
+    
+    document.getElementById('status').innerText += ' Predicting...';
+    showTestResults(batch, predictions, labels);
+}  // End of Main program
+
+
+/////////////////////// End main Program /////////////////////////////////
+
+</script>
+
+
+
+
+
+<style>
+  canvas {
+    width: 100px;
+  }
+  .pred {
+    font-size: 30px;
+    width: 100px;
+  }
+  .pred-correct {
+    background-color: #00cf00;
+  }
+  .pred-incorrect {
+    background-color: red;
+  }
+  .pred-container {
+    display: inline-block;
+    width: 100px;
+    margin: 10px;
+  }
+</style>
+
+
+
+<!--- Main part of the webpage ---->
+
+
+<h2 align="center">Easiest Model Builder Using <a href="http://deeplearnjs.org">Deeplearnjs</a> in Pure Javascript</h2>
+See original at <a href="https://deeplearnjs.org/demos/model-builder/">https://deeplearnjs.org/demos/model-builder/</a>
+and try to build the easiest version of a model. Delete all layers until you only have:
+Flattened, Fully Connected, Softmax, Label. That is what is working here.<br><br>
+
+
+<!--- The only button webpage ---->
+
+<input type="button" value="run" onclick="{
+   myMnist();
+}">
+
+
+<!--- A few Div's to communicate with the webpage ---->
+
+<div id="status">Status Here</div>
+<div id="message">Messages Here</div>
+<div id="images">The Images Here</div>
+<br>
+<br>
+<script>
+                                                                 
+async function myShow1(){                                                             
+
+      const matrixShape = [2, 3];  // 2 rows, 3 columns.
+      const matrix = dl.Array2D.new(matrixShape, [10, 20, 30, 40, 50, 60]);
+      const vector = dl.Array1D.new([0, 1, 2]);
+      const myResult = dl.ENV.math.matrixTimesVector(matrix, vector);
+                                                           
+      document.getElementById('myDiv08').innerHTML = 'Array shape is ' + myResult.shape + ' data is ' + await myResult.data()
+}
+    
+</script>    
+    
+<input id="myButton01" type="button" value="Typical Async Function" onclick="{  
+                                                                 
+   myShow1()   
+                                                                 
+}">
+       
+<div id="myDiv08">...</div><br>
+<br>
+<input id="myButton02" type="button" value="Inline Async" onclick="{
+                                                                 
+   (async function() {
+
+      const matrixShape = [2, 3];  // 2 rows, 3 columns.
+      const matrix = dl.Array2D.new(matrixShape, [10, 20, 30, 40, 50, 60]);
+      const vector = dl.Array1D.new([0, 1, 2]);
+      const myResult = dl.ENV.math.matrixTimesVector(matrix, vector);
+                                                           
+      document.getElementById('myDiv09').innerHTML = 'Array shape is ' + myResult.shape + ' data is ' + await myResult.data()
+
+   })();
+                                                                 
+}">
+
+
+<div id="myDiv09">...</div>
+<br>
+<br>
+<input id="myButton01" type="button" value="Async Arrow Functions" onclick="{
+    
+  (async () => {
+
+      const matrixShape = [2, 3];  // 2 rows, 3 columns.
+      const matrix = dl.Array2D.new(matrixShape, [10, 20, 30, 40, 50, 60]);
+      const vector = dl.Array1D.new([0, 1, 2]);
+      const myResult = dl.ENV.math.matrixTimesVector(matrix, vector);
+                                                           
+      document.getElementById('myDiv10').innerHTML = 'Array shape is ' + myResult.shape + ' data is ' + await myResult.data()
+
+  })();       
+       
+}">
+        
+    
+    
+
+
+<div id="myDiv10">Array shape is 2 data is 80,170</div><br>
+<br>
+<script>
+
+    
+    
+
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
+    
+// Helper function just formats Matricies nicely on a webpage
+
+// myDiv as a string, myOutTensor as a tensor, myCols as an integer, myTitle as a string
+async function myTensorTable(myDiv, myOutTensor, myCols, myTitle){   
+
+  
+ document.getElementById(myDiv).innerHTML += myTitle + '<br>'
+
+ const myOutput = await myOutTensor.data()
+ myTemp = '<table border=3><tr>'
+   for (myCount = 0;    myCount <= myOutTensor.size - 1;   myCount++){   
+     myTemp += '<td>'+ myOutput[myCount] + '</td>'
+     if (myCount % myCols == myCols-1){
+         myTemp += '</tr><tr>'
+     }
+   }   
+   myTemp += '</tr></table>'
+   document.getElementById(myDiv).innerHTML += myTemp + '<br>'
+}
+
+
+    
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   
+    
+    
+    
+    
+    
+    
+    
+   
+async function myTest01(){
+
+  const matrixShape = [2, 3];  // 2 rows, 3 columns. Could be used in the next line but I didn't
+  const myWeights  = dl.Array2D.new([3, 3], [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]);
+  const myInputs = dl.Array2D.new([3, 3], [1, 2, 3, 4, 5, 6, 7, 8, 9]);
+
+  // just show what is in the 2D arrays
+  await myTensorTable('myDiv11', myWeights, 3, 'Weights [3x3]')  
+  await myTensorTable('myDiv11', myInputs, 3, 'Inputs [3x3]')  
+   
+  // lets flatten an array  
+  var myFlat = myInputs.flatten(myInputs)  
+  await myTensorTable('myDiv11', myFlat, 1, 'flatten the 2D Inputs array into a 1D array')    
+
+   
+  // lets try some scalars  
+  const myBias    = dl.Scalar.new(2.3);
+
+  const myBiasOutput = await myBias.data();
+  document.getElementById('myDiv11').innerHTML += 'Bias Scalar = ' + myBiasOutput + ' <br><hr>'
+
+  // Generic math ability set
+  var myAlgorithm = dl.ENV.math
+
+  // Try the matMul function for Matrix multiplication
+  var  myProduct = myAlgorithm.matMul(myWeights, myInputs)
+  await myTensorTable('myDiv11', myProduct, 3, 'Product of Weights x Inputs')  
+
+
+    
+ //  Same thing but a bit more complex 
+ const myMatrix1  = dl.Array2D.new([2, 2], [3, 2, 5, 4]);
+ const myMatrix2 =  dl.Array2D.new([2, 2], [2, 3, 4, 5]);
+
+ await myTensorTable('myDiv11', myMatrix1, 2, 'Table A')  
+ await myTensorTable('myDiv11', myMatrix2, 2, 'Table B')  
+
+
+ 
+  var  myProduct = myAlgorithm.matMul(myMatrix1, myMatrix2)
+  document.getElementById('myDiv11').innerHTML += ' A * B Matmul 2D = ' + myProduct.getValues()  +'<br>'   
+
+  var  myProduct = myAlgorithm.matMul(myMatrix1, myMatrix2, 'TRANSPOSED', 'REGULAR')
+  document.getElementById('myDiv11').innerHTML += 'A^T * B Matmul 2D = ' + myProduct.getValues()  +'<br>'  
+
+  var  myProduct = myAlgorithm.matMul(myMatrix2, myMatrix1)
+  document.getElementById('myDiv11').innerHTML += 'B * A Matmul 2D = ' + myProduct.getValues()  +'<br>' 
+
+  var  myProduct = myAlgorithm.matMul(myMatrix2, myMatrix1, 'REGULAR', 'TRANSPOSED')
+  document.getElementById('myDiv11').innerHTML += ' B * A^T  Matmul 2D = ' + myProduct.getValues()  +'<br><hr>'   
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////  
+
+ // Now lets try some 1D arrays
+ const w = new dl.Array1D.new([0.7, -0.3])
+ const i = new dl.Array1D.new([0.1, 0.8])
+ const b = dl.Scalar.new(2.1)
+
+ await myTensorTable('myDiv01', w, 2, 'w as weights')  
+ await myTensorTable('myDiv01', i, 2, 'i as inputs ')  
+
+ document.getElementById('myDiv11').innerHTML += 'b as Bias= '+ b.getValues()  +'<br><Br>'
+ 
+ myAlgorithm.scope(function() {
+   var myDot = myAlgorithm.dotProduct(w, i)
+   var mySum = myAlgorithm.add(myDot, b)
+   var mySig = myAlgorithm.sigmoid(mySum)
+   document.getElementById('myDiv11').innerHTML += 'sigmoid(add( dot(w, i)+ b) ) = '+mySig.getValues()  +'<br>'
+ })
+
+ myAlgorithm.scope(function() {
+    var myDot = myAlgorithm.dotProduct(w, i)
+    var mySum = myAlgorithm.add(myDot, b)
+    var mySig = myAlgorithm.sinh(mySum)
+    document.getElementById('myDiv11').innerHTML += 'sinH(add( dot(w, i)+ b) ) = '+mySig.getValues()  +'<br>'
+ })
+
+
+ myAlgorithm.scope(function() {
+    var myDot = myAlgorithm.dotProduct(w, i)
+    var mySum = myAlgorithm.add(myDot, b)
+    var mySig = myAlgorithm.relu(mySum)
+    document.getElementById('myDiv11').innerHTML += 'relu(add( dot(w, i)+ b) ) = '+mySig.getValues()  +'<br><hr>'
+ })
+    
+
+
+  
+  
+  
+}
+
+</script>
+
+
+
+
+<input type="button" value="Run All" onclick="{
+    myTest01();
+}"><br>
+
+
+
+<div id="myDiv11">...</div><br>
 
 
 
