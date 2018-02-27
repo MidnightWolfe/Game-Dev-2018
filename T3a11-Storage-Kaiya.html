@@ -1,6 +1,30 @@
 <script>
 function myCheckKeys(event){
-       document.getElementById('myDiv01').innerHTML += String.fromCharCode(event.keyCode)+ ' '
+       document.getElementById('myDiv01').innerHTML += String.fromCharCode(event.keyCode)
+
+       if (String.fromCharCode(event.keyCode) == 'A') {
+            document.getElementById('myAnswer1').value = parseFloat(document.getElementById('myInput1').value) + parseFloat(document.getElementById('myInput2').value)
+     }
+
+//YOUR if statements here
+       
+       if (String.fromCharCode(event.keyCode) == 'C') {
+           document.getElementById('myAnswer2').value = parseChar(document.getElementById('myInput3').value) + parseChar(document.getElementById('myInput4').value)
+
+
+     }
+
+       if (String.fromCharCode(event.keyCode) == 'S') {
+           document.getElementById('myAnswer3').value = String(document.getElementById('myInput5').value) + String(document.getElementById('myInput6').value)
+
+
+     }
+       if (String.fromCharCode(event.keyCode) == 'I') {
+           document.getElementById('myAnswer4').value = parseInt(document.getElementById('myInput7').value) + parseInt(document.getElementById('myInput8').value)
+
+
+     }
+
 }
 
 </script>
@@ -8,15 +32,27 @@ function myCheckKeys(event){
 
 <h1 align=center> Storage and Keydown by Kaiya </h1>
  
-
-A floating point number <input id="myInput" type=text value=2.3>
-
+ 
+<input id="myInput1" type=text value=2.3>
+<input id="myInput2" type=text value=2.3> =
+<input id="myAnswer1" type=text >
+<br>
+<input id="myInput3" type=text value=G>
+<input id="myInput4" type=text value=O> =
+<input id="myAnswer2" type=text >
+<br>
+<input id="myInput5" type=text value=This>
+<input id="myInput6" type=text value= Why> =
+<input id="myAnswer3" type=text >
+<br>
+<input id="myInput7" type=text value=4>
+<input id="myInput8" type=text value=3> =
+<input id="myAnswer4" type=text >
+<br>
+Type "A" to add them. You make text area for Integer, Boolean, char, and string.
+B = Boolean C= Char S=string I= integer
 
 <div id="myDiv01"></div>
-
-
-
-
 
 
 
