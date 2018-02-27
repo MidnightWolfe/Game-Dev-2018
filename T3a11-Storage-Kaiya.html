@@ -1,13 +1,22 @@
 <script>
 function myCheckKeys(event){
-     alert(String.fromCharCode(event.keyCode))
-       document.getElementById('myDiv01').innerHTML +='Hey <br>'
+       document.getElementById('myDiv01').innerHTML += String.fromCharCode(event.keyCode)+ ' '
 }
 
 </script>
 <body onKeyDown="{myCheckKeys(event)}">
 
 <h1 align=center> Storage and Keydown by Kaiya </h1>
-<br>
+ 
+
+A floating point number <input id="myInput" type=text value=2.3>
+
 
 <div id="myDiv01"></div>
+
+
+
+
+
+
+
