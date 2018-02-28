@@ -9,7 +9,7 @@ function myCheckKeys(event){
 //YOUR if statements here
        
        if (String.fromCharCode(event.keyCode) == 'C') {
-           document.getElementById('myAnswer2').value = Char(document.getElementById('myInput3').value) + Char(document.getElementById('myInput4').value)
+           document.getElementById('myAnswer2').value = String(document.getElementById('myInput3').value) + String(document.getElementById('myInput4').value)
 
 
      }
@@ -53,8 +53,8 @@ function myCheckKeys(event){
 <input id="myAnswer4" type=text >
 <br>
 <br>
-Type "A" to add them. You make text area for Integer, Boolean, char, and string.
-B = Boolean C= Char S=string I= integer
+Type "A" to add them first set. You make text area for Integer, Boolean, char, and string. 
+B = Boolean C= Char S=string I= integer A = Float
 
 <div id="myDiv01"></div>
 <br>
@@ -64,3 +64,4 @@ B = Boolean C= Char S=string I= integer
 <option value="true">True
 <option value="false">False
 </select>
+
