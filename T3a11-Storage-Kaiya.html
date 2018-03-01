@@ -24,7 +24,7 @@ function myCheckKeys(event){
 
 
      }
-    
+       
 
 
 
@@ -59,8 +59,17 @@ A = Float, B = Boolean, C= Char S= String, I= Integer
 <div id="myDiv01"></div>
 <br>
 
-<select onSelect = "{alert()}">
-<option value="">
+<select onChange="{
+       if (this.value == 'true') {
+           document.getElementById('myDiv01').innerHTML += 'That was true<br>'
+     } else {
+           document.getElementById('myDiv01').innerHTML += 'That was false<br>'
+     }
+
+}">
+
+<option >
 <option value="true">True
 <option value="false">False
 </select>
+
