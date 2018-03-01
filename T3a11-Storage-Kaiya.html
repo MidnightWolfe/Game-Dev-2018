@@ -54,11 +54,11 @@ function myCheckKeys(event){
 <br>
 <br>
 Type a letter to add them . You make text area for Integer, Boolean, Char, and string. 
-A = Float, B = Boolean, C= Char S= String, I= Integer
+A = Float, C= Char S= String, I= Integer
 
 <div id="myDiv01"></div>
 <br>
-
+Boolean on Change of Selection
 <select onChange="{
        if (this.value == 'true') {
            document.getElementById('myDiv01').innerHTML += 'That was true<br>'
@@ -67,9 +67,11 @@ A = Float, B = Boolean, C= Char S= String, I= Integer
      }
 
 }">
-
+<br>
 <option >
 <option value="true">True
 <option value="false">False
 </select>
+
+
 
