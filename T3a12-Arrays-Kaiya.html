@@ -1,0 +1,59 @@
+<h1 align=center>Arrays by Kaiya</h1>
+<br>
+
+<input type=button value="Run myStuff" onclick="
+    //alert(Math.floor(Math.random()*9+1))
+      myStuff = new Array()
+      myStuff[0] = 'Cell phone <br>'
+      myStuff[1] = 'Shoes <br>'
+      myStuff[2] = 'Pants <br>'
+      myStuff[3] = 'Shirt <br>'
+      myStuff[4] = 'Hat <br>'
+      myStuff[5] = 'Sweater <br>'
+      myStuff[6] = 'Watch <br>'
+      myStuff[7] = 'Socks <br>'
+
+      document.getElementById('myDiv01').innerHTML += myStuff[0] + myStuff[1] + myStuff[2] + myStuff[3] + myStuff[4] + myStuff[5] + myStuff[6] + myStuff[7]
+
+
+
+">
+<br>
+<br>
+
+<input type=button value="Run myStuff with for loop" onclick="
+    //alert(Math.floor(Math.random()*9+1))
+      myStuff = new Array()
+      myStuff[0] = 'Cell phone <br>'
+      myStuff[1] = 'Shoes <br>'
+      myStuff[2] = 'Pants <br>'
+      myStuff[3] = 'Shirt <br>'
+      myStuff[4] = 'Hat <br>'
+      myStuff[5] = 'Sweater <br>'
+      myStuff[6] = 'Watch <br>'
+      myStuff[7] = 'Socks <br>'
+     for(x=0; x<=8; x++){
+      document.getElementById('myDiv02').innerHTML += myStuff[x] + ' <br>'
+
+     }
+
+">
+<br>
+
+
+
+<input  type=text id="myText01" value=3>
+<br>
+<br>
+<input type=button value="Run myRandom" onclick="
+    //alert()
+    myRandomNumber=Math.floor(Math.random()*9+1)
+    
+    document.getElementById('myDiv03').innerHTML += myRandomNumber + ' <br>'
+
+">
+
+<div id="myDiv01"></div>
+<div id="myDiv02"></div>
+<div id="myDiv03"></div>
+
