@@ -21,39 +21,41 @@
 <br>
 <br>
 
-<input type=button value="Run myStuff with for loop" onclick="
+<input type=button value="Run myCats (for loop)" onclick="
     //alert()
-      myStuff = new Array()
-      myStuff[0] = 'Cell phone <br>'
-      myStuff[1] = 'Shoes <br>'
-      myStuff[2] = 'Pants <br>'
-      myStuff[3] = 'Shirt <br>'
-      myStuff[4] = 'Hat <br>'
-      myStuff[5] = 'Sweater <br>'
-      myStuff[6] = 'Watch <br>'
-      myStuff[7] = 'Socks <br>'
+      myCats = new Array()
+      myCats[0] = 'British Shorthair'
+      myCats[1] = 'Siamese Cat'
+      myCats[2] = 'Persian Cat'
+      myCats[3] = 'Maine Coon'
+      myCats[4] = 'Bengal Cat'
+      myCats[5] = 'Balinese Cat'
+      myCats[6] = 'Korat'
+      myCats[7] = 'Turkish Van'
      for(x=0; x<=8; x++){
-      document.getElementById('myDiv02').innerHTML += myStuff[x] + ' <br>'
+      document.getElementById('myDiv02').innerHTML += myCats[x] + ' <br>'
 
      }
 
 ">
 <br>
-
-
-
+<br>
 <input  type=text id="myText01" value=3>
 <br>
 <br>
 <input type=button value="Run myRandom" onclick="
     //alert(Math.floor(Math.random()*9+1))
-    myRandomNumber=Math.floor(Math.random()*9+1)
+    myRandomNumber=Math.floor(Math.random()*99+1)
     
     document.getElementById('myDiv03').innerHTML += myRandomNumber + ' <br>'
 
 ">
+<br>
+<br>
 
 <div id="myDiv01"></div>
 <div id="myDiv02"></div>
 <div id="myDiv03"></div>
+
+
 
