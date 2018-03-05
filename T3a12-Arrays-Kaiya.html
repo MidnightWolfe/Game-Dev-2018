@@ -53,7 +53,20 @@
 <br>
 <br>
 
+<input type=button value="Run myRandom loop" onclick="
+    //alert(Math.floor(Math.random()*9+1))
+    myRandomNumber=Math.floor(Math.random()*99+1)
+   
+   for(x=0; x<=2; x++){
+    document.getElementById('myDiv04').innerHTML += myRandomNumber + ' <br>'
+    }
+
+
+">
+<br>
+<br>
+
 <div id="myDiv01"></div>
 <div id="myDiv02"></div>
 <div id="myDiv03"></div>
-
+<div id='myDiv04'></div>
