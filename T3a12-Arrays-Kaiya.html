@@ -44,9 +44,6 @@
 <div id="myDiv02"></div>
 <br>
 <br>
-<input  type=text id="myText01" value=3>
-<br>
-<br>
 <input type=button value="Run myRandom" onclick="
     //alert(Math.floor(Math.random()*9+1))
     myRandomNumber=Math.floor(Math.random()*99+1)
@@ -59,14 +56,20 @@
 <br>
 <br>
 
+Loop this Amount: <input  type=text id="myText01" value=3 size=6>
+<br>
+<br>
 <input type=button value="Run myRandom loop" onclick="
-    //alert(Math.floor(Math.random()*9+1))
-    myRandomNumber=Math.floor(Math.random()*99+1)
-   
-   for(x=0; x<=2; x++){
-    document.getElementById('myDiv04').innerHTML += myRandomNumber + ' <br>'
-    }
 
+    myInput = document.getElementById('myText01').value
+    
+    myRandomNumber = new Array()
+
+    for(x=1; x<=myInput; x++){
+     document.getElementById('myDiv04').innerHTML += myRandomNumber[0] = Math.floor(Math.random()*99+1) + ' <br>'
+
+    }
+ 
 
 ">
 <br>
