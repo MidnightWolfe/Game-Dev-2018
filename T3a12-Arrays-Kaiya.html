@@ -66,7 +66,12 @@ Loop this Amount: <input  type=text id="myText01" value=3 size=6>
     myRandomNumber = new Array()
 
     for(x=1; x<=myInput; x++){
-     document.getElementById('myDiv04').innerHTML += myRandomNumber[0] = Math.floor(Math.random()*99+1) + ' <br>'
+       myRandomNumber[x] = Math.floor(Math.random()*99+1)
+
+    }
+     document.getElementById('myDiv04').innerHTML =''
+     for(x=1; x<=myInput; x++){
+        document.getElementById('myDiv04').innerHTML += myRandomNumber[x] + ' <br>'
 
     }
  
