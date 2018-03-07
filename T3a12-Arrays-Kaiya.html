@@ -100,21 +100,19 @@ Loop this Amount: <input  type=text id="myText02" value=3 size=6>
 
     }
   
-
-// sort the values
      for(myLoop=1; myLoop<=myInput; myLoop++){
         for(myLoop=1; myLoop<=myInput; myLoop++){
             if (myRandomNumber[myLoop] > myRandomNumber[myLoop + 1]  ){
-                myTemp = myRandomNumber[myLoop] //finish next two lines
+                myTemp = myRandomNumber[myLoop]
                 myRandomNumber[myLoop] = myRandomNumber[myLoop + 1]
                 myRandomNumber[myLoop + 1] = myTemp
                
            }
        }
     }
-//print again
+
      for(myLoop=1; myLoop<=myInput; myLoop++){
-        document.getElementById('myDiv05').innerHTML += myRandomNumber[myLoop] + ' <br>'
+        document.getElementById('myDiv05').innerHTML += '<br> ' + myRandomNumber[myLoop]
 
     }
 ">
