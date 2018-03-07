@@ -100,7 +100,7 @@ Loop this Amount: <input  type=text id="myText02" value=3 size=6>
 
     }
   
-     for(myLoop=1; myLoop<=myInput; myLoop++){
+     for(myX=1; myX<=myInput; myX++){
         for(myLoop=1; myLoop<=myInput; myLoop++){
             if (myRandomNumber[myLoop] > myRandomNumber[myLoop + 1]  ){
                 myTemp = myRandomNumber[myLoop]
@@ -110,7 +110,7 @@ Loop this Amount: <input  type=text id="myText02" value=3 size=6>
            }
        }
     }
-
+     document.getElementById('myDiv05').innerHTML += 'After Sorting'
      for(myLoop=1; myLoop<=myInput; myLoop++){
         document.getElementById('myDiv05').innerHTML += '<br> ' + myRandomNumber[myLoop]
 
