@@ -81,5 +81,44 @@ Loop this Amount: <input  type=text id="myText01" value=3 size=6>
 <div id='myDiv04'></div>
 <br>
 <br>
+Loop this Amount: <input  type=text id="myText02" value=3 size=6>
+<br>
+<br>
+<input type=button value="Run myRandom Sort" onclick="
 
- 
+    myInput = document.getElementById('myText02').value
+    
+    myRandomNumber = new Array()
+
+    for(myLoop=1; myLoop<=myInput; myLoop++){
+       myRandomNumber[myLoop] = Math.floor(Math.random()*99+1)
+
+    }
+     document.getElementById('myDiv05').innerHTML =''
+     for(myLoop=1; myLoop<=myInput; myLoop++){
+        document.getElementById('myDiv05').innerHTML += myRandomNumber[myLoop] + ' <br>'
+
+    }
+  
+
+// sort the values
+     for(myLoop=1; myLoop<=myInput; myLoop++){
+        for(myLoop=1; myLoop<=myInput; myLoop++){
+            if (myRandomNumber[myLoop] > myRandomNumber[myLoop + 1]  ){
+                myTemp = myRandomNumber[myLoop] //finish next two lines
+                myRandomNumber[myLoop] = myRandomNumber[myLoop + 1]
+                myRandomNumber[myLoop + 1] = myTemp
+               
+           }
+       }
+    }
+//print again
+     for(myLoop=1; myLoop<=myInput; myLoop++){
+        document.getElementById('myDiv05').innerHTML += myRandomNumber[myLoop] + ' <br>'
+
+    }
+">
+
+<div id='myDiv05'></div>
+<br>
+<br>
