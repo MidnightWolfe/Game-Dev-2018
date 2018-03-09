@@ -43,7 +43,7 @@ or
        myString = 'Bob'
        myInt = 9
        myFloat = 4.65
-    console.log(myString+' his age is' + myInt)
+    console.log(myString+' his age is ' + myInt)
 
 }">
 <br>
@@ -90,9 +90,16 @@ or
 }">
 <br>
 <br>
-<input type=button value="console.assert" onclick="{
+<input type=button value="console.assert(true)" onclick="{
        
-    console.assert(false, 'Log Me!')
+    console.assert(true, 'Do not log this')
+
+}">
+<br>
+<br>
+<input type=button value="console.assert(false) " onclick="{
+       
+    console.assert(false, 'Log this!')
 
 }">
 <br>
@@ -149,11 +156,11 @@ You make working buttons for the following Console commands
 
 <li>console.memory
 
-<li>console.profile(‘profileName’) & console.profileEnd(‘profileName’)
+<li>console.profile(â€˜profileNameâ€™) & console.profileEnd(â€˜profileNameâ€™)
 
-<li>console.assert(false, “Log me!”)
+<li>console.assert(false, â€œLog me!â€)
 
-<li>console.group(‘group’) & console.groupEnd(‘group’
+<li>console.group(â€˜groupâ€™) & console.groupEnd(â€˜groupâ€™
 
 <li>console.count()
 
