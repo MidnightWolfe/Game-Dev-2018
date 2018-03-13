@@ -1,26 +1,47 @@
 <h1 align=center>Classes by Kaiya</h1>
-Make a class
-called myClass
-with properties myName and myAge
-that are passed to it in a construtor
-Needs one method that puts Name and Age into a Div.
+Make a class called myClass with properties myName and myAge that are passed to it in a construtor. Needs one method that puts Name and Age into a Div.
+<br>
+<br>
 <script>
-function myClass(myName, myAge){
-class myClass {
-     constructor(myName, myAge) {
-         this.myName = myName;
-         this.myAge = myAge;
-        }
-  }
+  class myClass {
+     constructor(passName, passAge, passAnimal){
+        this.myName = passName;
+        this.myAge = passAge;
+        this.myAnimal = passAnimal;
+      }
+     myShow1(){
+        document.getElementById('myDiv01').innerHTML += 'Hello ' + this.myName + '<br>' + this.myAge + '<br>' + this.myAnimal + '<br>'
+      }
+     myShow2(){
+        document.getElementById('myDiv02').innerHTML += 'Hello ' + this.myName + '<br>' + this.myAge + '<br>' + this.myAnimal + '<br>'
+      }
 }
+
 </script>
-<input type=button value="Class" onclick='{
-       document.getElementById('myDiv01').innerHTML = myClass
-       myClass('Bob, 64')
 
+<input type=button value="Activate Dog" onclick="{
 
-
-
-
+        myDog = new myClass('Charlie', 'age: 9', 'Irish Setter')
+        myDog.myShow1()
 }">
-<div id="myDiv01" >...</div>
+<br>
+<div id="myDiv01"></div>
+<br>
+<input type=button value="Activate Cat" onclick="{
+
+        myCat = new myClass('Smudge', 'age: 7', 'Tortoise shell')
+        myCat.myShow2()
+        
+}">
+<br>
+<div id="myDiv02"></div>
+<br>
+<input type=button value="Array of Pets?" onclick="{
+
+        
+}">
+<br>
+
+<br>
+Add to the class constructor the animal type, pass it, fix myShow to show all three properties, then add the cat button
+then try to add an Array of animals
