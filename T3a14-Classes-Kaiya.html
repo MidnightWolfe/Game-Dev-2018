@@ -15,10 +15,11 @@
         document.getElementById('myDiv02').innerHTML += 'Hello ' + this.myName + '<br>' + this.myAge + '<br>' + this.myType + '<br>'
       }
      myShow3(){
-        document.getElementById('myDiv03').innerHTML +=  this.myName + '<br>' + this.myAge + '<br>' + this.myType + '<br>'
+        document.getElementById('myDiv03').innerHTML +=  this.myName + this.myAge + this.myType + '<br>'
          
       }
 }
+
 
 </script>
 
@@ -41,15 +42,15 @@
 <br>
 <input type=button value="Array of Pets" onclick="{
         myPets = new Array()
-        myPets[0] = new myAnimal('Ben','age: 2' ,'Rat')
-        myPets[1] = new myAnimal('Bubbles','age: 1','Rat')
-        myPets[2] = new myAnimal('Draco','age: 10','Leopard Gecko')
-        myPets[3] = new myAnimal('Sasha','age: 9','Cocker Spaniel')
-        myPets[4] = new myAnimal('Blossom','age: 8','Calico Cat')
-        myPets[5] = new myAnimal('Tigger','age: 15','Orange Tabby Cat')
-    for(x=0; x<=7; x++){    
+        myPets[0] = new myAnimal('Ben, ','age: 2,' ,' Rat')
+        myPets[1] = new myAnimal('Bubbles, ','age: 1,',' Rat')
+        myPets[2] = new myAnimal('Draco, ','age: 10,',' Leopard Gecko')
+        myPets[3] = new myAnimal('Sasha, ','age: 9,',' Cocker Spaniel')
+        myPets[4] = new myAnimal('Blossom, ','age: 8,',' Calico Cat')
+        myPets[5] = new myAnimal('Tigger, ','age: 15,',' Orange Tabby Cat')
+       for(x=0; x<=7; x++){ 
         myPets[x].myShow3()
-     } 
+      }
     
         
 }">
