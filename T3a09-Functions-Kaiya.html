@@ -3,7 +3,9 @@
 
 function myGuardian(myX){
 
-alert('Your ' + myX + ' are dirty')
+//alert('Your ' + myX + ' are dirty')
+document.getElementById('myDiv01').innerHTML += 'Your ' + myX + ' are dirty' + '<br>'
+
 
 }
 
@@ -13,6 +15,7 @@ alert('Your ' + myX + ' are dirty')
 
 myGuardian('Socks')
 
+
 }">
 
 <input type=button value="Where are my shoes" onclick="{
@@ -21,22 +24,16 @@ myGuardian('Shoes')
 
 }">
 
-<input type=button value="inline function" onclick="{
-
-(function () {
-
-alert('inline works')
-
-})()
-
-}">
+<br>
+<div id="myDiv01"></div>
 <br>
 <br>
 <script>
 
 function myThings(myY){
 
-alert('This is your ' + myY + ' ,see?')
+//alert('This is your ' + myY + ' ,see?')
+document.getElementById('myDiv02').innerHTML += 'This is your ' + myY + ' ,see?' + '<br>'
 
 }
 
@@ -54,12 +51,15 @@ myThings('Dog')
 
 }">
 <br>
+<div id="myDiv02"></div>
+<br>
 <br>
 <script>
 
 function myS(myY){
 
-alert('This is why ' + myY + ' works')
+//alert('This is why ' + myY + ' works')
+document.getElementById('myDiv03').innerHTML += 'This is why ' + myY + ' works' + '<br>'
 
 }
 
@@ -77,12 +77,15 @@ myS('clicking this')
 
 }">
 <br>
+<div id="myDiv03"></div>
+<br>
 <br>
 <script>
 
 function myC(myY){
 
-alert('You should ' + myY + ' this')
+//alert('You should ' + myY + ' this')
+document.getElementById('myDiv04').innerHTML += 'You should ' + myY + ' this' + '<br>'
 
 }
 
@@ -100,12 +103,15 @@ myC('read all of')
 
 }">
 <br>
+<div id="myDiv04"></div>
+<br>
 <br>
 <script>
 
 function myH(myY){
 
-alert('You do not ' + myY + ' this')
+//alert('You do not ' + myY + ' this')
+document.getElementById('myDiv05').innerHTML += 'You do not ' + myY + ' this' + '<br>'
 
 }
 
@@ -123,29 +129,15 @@ myH('comprehend')
 
 }">
 <br>
+<div id="myDiv05"></div>
 <br>
+
 <script>
 
 function myP(myY){
 
-alert('Why ' + myY + ' this the assignment')
-
-}
-
-</script>
-
-<input type=button value="Is" onclick="{
-
-myP('is')
-
-}">
-<br>
-<br>
-<script>
-
-function myP(myY){
-
-alert('I am ' + myY + ' things to say')
+//alert('I am ' + myY + ' things to say')
+document.getElementById('myDiv07').innerHTML += 'I am ' + myY + ' things to say' + '<br>'
 
 }
 
@@ -163,12 +155,15 @@ myP('giving you')
 
 }">
 <br>
+<div id="myDiv07"></div>
+<br>
 <br>
 <script>
 
 function myV(myY){
 
-alert('Help ' + myY + ' choose more things')
+//alert('Help ' + myY + ' choose more things')
+document.getElementById('myDiv08').innerHTML += 'Help ' + myY + ' choose more things' + '<br>'
 
 }
 
@@ -186,12 +181,15 @@ myV('yourself and')
 
 }">
 <br>
+<div id="myDiv08"></div>
+<br>
 <br>
 <script>
 
 function myB(myY){
 
-alert('Odd ' + myY + ' happen in this class')
+//alert('Odd ' + myY + ' happen in this class')
+document.getElementById('myDiv09').innerHTML += 'Odd ' + myY + ' happen in this class' + '<br>'
 
 }
 
@@ -208,6 +206,11 @@ myB('conversations')
 myB('assignments')
 
 }">
+<br>
+<div id="myDiv09"></div>
+<br>
+
+
 
 
 
