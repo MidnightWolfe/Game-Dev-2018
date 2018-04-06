@@ -1,0 +1,38 @@
+<h1 align=center><font color=white>Scroll Image by Kaiya</h1>
+
+<html>
+<head>
+<script>
+
+myBgPosX = 0
+
+myBgPosY = 0
+
+function myScroll() {
+
+myBgPosX += 3;
+
+myBgPosY += 0;
+
+myBgObject.style.backgroundPosition = myBgPosX+" " + myBgPosY;
+
+}
+
+</script>
+
+</head>
+
+<body background="https://i.pinimg.com/originals/e6/35/58/e6355800400cf9fe2d14c87bcd66c046.jpg" onload="{
+
+myTimer = setInterval('myScroll()', 100)
+
+}" >
+
+<script> // This object must be after the body tag
+
+myBgObject = eval('document.body');
+
+</script>
+</body>
+<div id="myDiv01" style="position:absolute; left: 600px; top:400px" ><img src="https://i.pinimg.com/736x/da/d8/15/dad8154d931c8d3c3ba25989c163561c--cute-cats-funny-cats.jpg" height="70" width="70"></div>
+</html>
