@@ -215,6 +215,7 @@ if(event.keyCode==115){ document.getElementById('move1').style.top = parseInt(do
 
 if(event.keyCode==100){ document.getElementById('move1').style.left = parseInt(document.getElementById('move1').style.left)+5+'px'} 
 
+
 }">
 
 <script> // This object must be after the body tag
@@ -253,9 +254,9 @@ Click to hide.
 
 <!-- ******************** Following should be all your images ************************** -->
 
-<img id="move1" src="http://pngimg.com/uploads/cat/cat_PNG115.png" style="position:absolute; width:30px; height:30px; left:30px; top:250px" onClick="myGunPrep()">
+<img id="move1" src="http://pngimg.com/uploads/cat/cat_PNG115.png" style="position:absolute; width:50px; height:50px; left:30px; top:250px" onClick="myGunPrep()">
 
-<img id="move2" src="https://media.giphy.com/media/5xtDarniHFmiZuCoW40/giphy.gif" style="position:absolute; width:30px; height:30px; left:500px; top:240px;"/>
+<img id="move2" src="https://media.giphy.com/media/5xtDarniHFmiZuCoW40/giphy.gif" style="position:absolute; width:50px; height:50px; left:500px; top:240px;"/>
 
 <input type=button value="Fire" onClick="myGunPrep()">
 
@@ -273,6 +274,10 @@ Note: ontouchstart is faster than onclick but only works on touch screens or mob
 
 <input type=button value="Bg Faster Right" onClick="myBgSpeedXright += 1">
 
+<input type=button value="Bg Faster Left" onClick="myBgSpeedXright += -1">
+
+<input type=button value="BG Faster Up" onClick="myBgSpeedYdown += -2">
+
 <input type=button value="Step Right Move1" onclick="{
 
 document.getElementById('move1').style.left = parseInt(document.getElementById('move1').style.left)+5+'px'
@@ -281,9 +286,57 @@ checkAll()
 
 }">
 
+<input type=button value="Step Left Move1" onclick="{
+
+document.getElementById('move1').style.left = parseInt(document.getElementById('move1').style.left)-5+'px'
+
+checkAll()
+
+}">
+
+<input type=button value="Step Down Move1" onclick="{
+
+document.getElementById('move1').style.top = parseInt(document.getElementById('move1').style.top)+5+'px'
+
+checkAll()
+
+}">
+
+<input type=button value="Step Up Move1" onclick="{
+
+document.getElementById('move1').style.top = parseInt(document.getElementById('move1').style.top)-5+'px'
+
+checkAll()
+
+}">
+
 <input type=button value="Step Down Move2" onclick="{
 
 document.getElementById('move2').style.top = parseInt(document.getElementById('move2').style.top)+5+'px'
+
+checkAll()
+
+}">
+
+<input type=button value="Step Up Move2" onclick="{
+
+document.getElementById('move2').style.top = parseInt(document.getElementById('move2').style.top)-5+'px'
+
+checkAll()
+
+}">
+
+<input type=button value="Step Left Move2" onclick="{
+
+document.getElementById('move2').style.left = parseInt(document.getElementById('move2').style.left)-5+'px'
+
+checkAll()
+
+}">
+
+<input type=button value="Step Right Move2" onclick="{
+
+document.getElementById('move2').style.left = parseInt(document.getElementById('move2').style.left)+5+'px'
 
 checkAll()
 
@@ -303,9 +356,21 @@ document.mySpeedY += 6
 
 }">
 
+<input type=button value="Auto Up" onClick="{
+
+document.mySpeedY += -6
+
+}">
+
 <input type=button value="Auto Right" onClick="{
 
 document.mySpeedX += 4
+
+}">
+
+<input type=button value="Auto Left" onClick="{
+
+document.mySpeedX += -4
 
 }">
 
