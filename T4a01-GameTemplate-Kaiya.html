@@ -278,6 +278,8 @@ Note: ontouchstart is faster than onclick but only works on touch screens or mob
 
 <input type=button value="BG Faster Up" onClick="myBgSpeedYdown += -2">
 
+<br>
+
 <input type=button value="Step Right Move1" onclick="{
 
 document.getElementById('move1').style.left = parseInt(document.getElementById('move1').style.left)+5+'px'
@@ -309,6 +311,8 @@ document.getElementById('move1').style.top = parseInt(document.getElementById('m
 checkAll()
 
 }">
+
+<br>
 
 <input type=button value="Step Down Move2" onclick="{
 
@@ -342,13 +346,7 @@ checkAll()
 
 }">
 
-<input type=button value="touch event Right" ontouchstart="{
-
-document.getElementById('move1').style.left = parseInt(document.getElementById('move1').style.left)+5+'px'
-
-checkAll()
-
-}">
+<br>
 
 <input type=button value="Auto Down" onClick="{
 
