@@ -205,11 +205,15 @@ document.getElementById('bullet1').style.left = parseInt(document.getElementById
 
 <!-- ******************** onkeypress just for webpages is useless on mobile apps ************************** -->
 
-<body background="myBackPic.png" onload="myTimer = setInterval('myScroll()', 100)" onkeypress="{
+<body background="https://entropymag.org/wp-content/uploads/2014/10/outer-space-wallpaper-pictures.jpg" onload="myTimer = setInterval('myScroll()', 100)" onkeypress="{
 
 if(event.keyCode==97){ document.getElementById('move1').style.left = parseInt(document.getElementById('move1').style.left)-5+'px'} // small 'a' key go left
 
 if(event.keyCode==119){ document.getElementById('move1').style.top = parseInt(document.getElementById('move1').style.top)-5+'px'} // small 'w' key go up
+
+if(event.keyCode==115){ document.getElementById('move1').style.top = parseInt(document.getElementById('move1').style.top)+5+'px'}
+
+if(event.keyCode==100){ document.getElementById('move1').style.left = parseInt(document.getElementById('move1').style.left)+5+'px'} 
 
 }">
 
@@ -219,7 +223,7 @@ myBgObject = eval('document.body');
 
 </script>
 
-<h2 align=center style="background-color:yellow"> Game Base by ___Your Name Here ___</h2>
+<h2 align=center style="background-color:yellow"> Game Base by Kaiya Your Name Here Kaiya</h2>
 
 <!-- ******************** Some instructions that magically disappear ************************** -->
 
@@ -249,13 +253,13 @@ Click to hide.
 
 <!-- ******************** Following should be all your images ************************** -->
 
-<img id="move1" src="myMove1Pic.png" style="position:absolute; width:30px; height:30px; left:30px; top:250px" onClick="myGunPrep()">
+<img id="move1" src="http://pngimg.com/uploads/cat/cat_PNG115.png" style="position:absolute; width:30px; height:30px; left:30px; top:250px" onClick="myGunPrep()">
 
-<img id="move2" src="myMove2Pic.png" style="position:absolute; width:30px; height:30px; left:500px; top:240px;"/>
+<img id="move2" src="https://media.giphy.com/media/5xtDarniHFmiZuCoW40/giphy.gif" style="position:absolute; width:30px; height:30px; left:500px; top:240px;"/>
 
 <input type=button value="Fire" onClick="myGunPrep()">
 
-<img id="bullet1" src="myBulletPic.png" style="position:absolute; width:10px; height:10px; left:500px; top:240px; visibility:hidden"/>
+<img id="bullet1" src="https://i.redd.it/s5n7r4l3fo7x.png" style="position:absolute; width:10px; height:10px; left:500px; top:240px; visibility:hidden"/>
 
 <!-- ******************** This is the silly little dot the main object hits ************************** -->
 
