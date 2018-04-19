@@ -125,9 +125,27 @@ document.getElementById('myShowDiv3').innerHTML = 'You hit object move2'
 
 }
 
+if (myHitOther('move1','move3')) {
+
+document.getElementById('myShowDiv3').innerHTML = 'You hit object move3'
+
+}
+
 if (myHitOther('bullet1','move2')) {
 
 document.getElementById('myShowDiv3').innerHTML = 'The bullet hit move 2'
+
+document.getElementById('bullet1').style.visibility = 'hidden'
+
+document.getElementById('bullet1').style.left = '-200px'
+
+clearInterval(document.myShot)
+
+}
+
+if (myHitOther('bullet1','move3')) {
+
+document.getElementById('myShowDiv3').innerHTML = 'The bullet hit move 3'
 
 document.getElementById('bullet1').style.visibility = 'hidden'
 
@@ -224,11 +242,11 @@ myBgObject = eval('document.body');
 
 </script>
 
-<h2 align=center style="background-color:yellow"> Game Base by Kaiya Your Name Here Kaiya</h2>
+<h2 align=center style="background-color:yellow"> Game Base by Kaiya </h2>
 
 <!-- ******************** Some instructions that magically disappear ************************** -->
 
-<div id="myInstructions" style="visibility:visible; width:500px; background-color:yellow" onclick="{
+<div id="myInstructions" style="visibility:visible; width:500px; background-color:white" onclick="{
 
 document.getElementById('myInstructions').style.visibility = 'hidden'}
 
@@ -238,9 +256,9 @@ document.getElementById('myInstructions').style.visibility = 'hidden'}
 
 <li> Make you own game
 
-<li> For this demonstration. click the buttons and the red box
+<li> Use WASD to move
 
-<li> Delete the buttons you do not want in your game.
+<li> Dogs cause a collision
 
 <li> Look at the code for each button to see how to make buttons for other directions
 
@@ -257,6 +275,8 @@ Click to hide.
 <img id="move1" src="http://pngimg.com/uploads/cat/cat_PNG115.png" style="position:absolute; width:50px; height:50px; left:30px; top:250px" onClick="myGunPrep()">
 
 <img id="move2" src="https://media.giphy.com/media/5xtDarniHFmiZuCoW40/giphy.gif" style="position:absolute; width:50px; height:50px; left:500px; top:240px;"/>
+
+<img id="move3" src="https://media.giphy.com/media/5xtDarniHFmiZuCoW40/giphy.gif" style="position:absolute; width:50px; height:50px; left:250px; top:400px;"/>
 
 <input type=button value="Fire" onClick="myGunPrep()">
 
@@ -343,11 +363,11 @@ document.mySpeedX += -4
 
 <!-- ******************** General game output ************************** -->
 
-<div id="myShowDiv1" style="width:300px; background-color:yellow">out 1</div>
+<div id="myShowDiv1" style="width:300px; background-color:white">out 1</div>
 
-<div id="myShowDiv2" style="width:300px; background-color:yellow">out 2</div>
+<div id="myShowDiv2" style="width:300px; background-color:white">out 2</div>
 
-<div id="myShowDiv3" style="width:300px; background-color:yellow">out 3</div>
+<div id="myShowDiv3" style="width:300px; background-color:white">out 3</div>
 
 <br>At the bottom of every page make sure you include the following button:<br>
 
