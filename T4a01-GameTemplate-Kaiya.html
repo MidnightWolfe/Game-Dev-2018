@@ -175,7 +175,7 @@ if(parseInt(document.getElementById('move1').style.left) > window.innerWidth - d
 
 
 
-if(parseInt(document.getElementById('move1').style.left) > window.innerWidth + document.getElementById('move1').width){
+if(parseInt(document.getElementById('move1').style.left) < window.innerWidth + document.getElementById('move1').width){
 
      document.mySpeedX *= 1
 
@@ -183,7 +183,7 @@ if(parseInt(document.getElementById('move1').style.left) > window.innerWidth + d
 
 
 
-if(parseInt(document.getElementById('move1').style.top) > window.innerHeight + document.getElementById('move1').height){
+if(parseInt(document.getElementById('move1').style.top) < window.innerHeight + document.getElementById('move1').height){
 
      document.mySpeedY *= 1
 
