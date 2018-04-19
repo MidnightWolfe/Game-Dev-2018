@@ -169,21 +169,62 @@ function myAuto(){
 
 if(parseInt(document.getElementById('move1').style.left) > window.innerWidth - document.getElementById('move1').width){
 
-document.mySpeedX *= -1
+     document.mySpeedX *= -1
 
-}
+            }
+
+
+
+if(parseInt(document.getElementById('move1').style.left) > window.innerWidth + document.getElementById('move1').width){
+
+     document.mySpeedX *= 1
+
+            }
+
+
+
+if(parseInt(document.getElementById('move1').style.top) > window.innerHeight + document.getElementById('move1').height){
+
+     document.mySpeedY *= 1
+
+            }
+
+
+
+
+ if(parseInt(document.getElementById('move1').style.top) > window.innerHeight - document.getElementById('move1').height){
+
+     document.mySpeedY *= -1
+
+            }
 
 document.getElementById('move1').style.left = parseInt(document.getElementById('move1').style.left)+document.mySpeedX+'px'
 
 document.getElementById('move1').style.top = parseInt(document.getElementById('move1').style.top)+document.mySpeedY+'px'
 
+
+
+
+
 // auto moving "move2" should occur here similar to the above.
 
+
+
+
 //folowing code showes where move 2 and move3, move4 etc are located
+
+
+
 
 document.getElementById('myShowDiv1').innerHTML = 'move1 x='+parseInt(document.getElementById('move1').style.left) +
 
 ', y='+parseInt(document.getElementById('move1').style.top)
+
+
+
+
+
+
 
 document.getElementById('myShowDiv2').innerHTML = 'move2 x='+parseInt(document.getElementById('move2').style.left) +
 
