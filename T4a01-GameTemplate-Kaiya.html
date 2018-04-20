@@ -264,17 +264,17 @@ document.getElementById('bullet1').style.left = parseInt(document.getElementById
 
 <!-- ******************** onkeypress just for webpages is useless on mobile apps ************************** -->
 
-<body background="https://entropymag.org/wp-content/uploads/2014/10/outer-space-wallpaper-pictures.jpg" onload="myTimer = setInterval('myScroll()', 100)" onkeypress="{
+<body background="https://entropymag.org/wp-content/uploads/2014/10/outer-space-wallpaper-pictures.jpg" onload="myTimer = setInterval('myScroll()', 100)" onkeydown="{
 
-if(event.keyCode==97){ document.getElementById('move1').style.left = parseInt(document.getElementById('move1').style.left)-5+'px'} // small 'a' key go left
+if(event.keyCode==65){ document.getElementById('move1').style.left = parseInt(document.getElementById('move1').style.left)-5+'px'} // small 'a' key go left 65
 
-if(event.keyCode==119){ document.getElementById('move1').style.top = parseInt(document.getElementById('move1').style.top)-5+'px'} // small 'w' key go up
+if(event.keyCode==87){ document.getElementById('move1').style.top = parseInt(document.getElementById('move1').style.top)-5+'px'} // small 'w' key go up 87
 
-if(event.keyCode==115){ document.getElementById('move1').style.top = parseInt(document.getElementById('move1').style.top)+5+'px'}
+if(event.keyCode==83){ document.getElementById('move1').style.top = parseInt(document.getElementById('move1').style.top)+5+'px'} // small 's' key go down 83
 
-if(event.keyCode==100){ document.getElementById('move1').style.left = parseInt(document.getElementById('move1').style.left)+5+'px'} 
+if(event.keyCode==68){ document.getElementById('move1').style.left = parseInt(document.getElementById('move1').style.left)+5+'px'} // small 'd' key go right 68
 
-
+if(event.keyCode==32){ myGunPrep()} // space to shoot 
 }">
 
 <script> // This object must be after the body tag
@@ -301,7 +301,9 @@ document.getElementById('myInstructions').style.visibility = 'hidden'}
 
 <li> Dogs cause a collision
 
-<li> Look at the code for each button to see how to make buttons for other directions
+<li> On automove it bounces off the right and bottom
+
+<li> Press space to shoot
 
 <li>You might want to use <a href="http://www.online-image-editor.com/">http://www.online-image-editor.com/</a>
 
