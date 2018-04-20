@@ -137,6 +137,8 @@ document.getElementById('myShowDiv3').innerHTML = 'The bullet hit move 2'
 
 document.getElementById('bullet1').style.visibility = 'hidden'
 
+document.getElementById('move2').style.visibility = 'hidden'
+
 document.getElementById('bullet1').style.left = '-200px'
 
 clearInterval(document.myShot)
@@ -148,6 +150,8 @@ if (myHitOther('bullet1','move3')) {
 document.getElementById('myShowDiv3').innerHTML = 'The bullet hit move 3'
 
 document.getElementById('bullet1').style.visibility = 'hidden'
+
+document.getElementById('move3').style.visibility = 'hidden'
 
 document.getElementById('bullet1').style.left = '-200px'
 
@@ -323,7 +327,7 @@ Click to hide.
 
 <input type=button value="Fire" onClick="myGunPrep()">
 
-<img id="bullet1" src="https://i.redd.it/s5n7r4l3fo7x.png" style="position:absolute; width:10px; height:10px; left:500px; top:240px; visibility:hidden"/>
+<img id="bullet1" src="https://i.redd.it/s5n7r4l3fo7x.png" style="position:absolute; width:10px; height:10px; left:500px; top:200px; visibility:hidden"/>
 
 <!-- ******************** This is the silly little dot the main object hits ************************** -->
 
