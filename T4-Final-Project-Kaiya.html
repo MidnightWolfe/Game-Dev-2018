@@ -175,7 +175,7 @@ function checkAll(){
 
   if(myHitOther('move1','move2')){
     LifePoints = -1
-    document.getElementById('myShowDiv3').innerHTML = 'You hit move 2'
+    //document.getElementById('myShowDiv3').innerHTML = 'You hit move 2'
    
     } else {document.getElementById('myShowDiv3').innerHTML = ''}
 
@@ -184,7 +184,7 @@ function checkAll(){
     alert('Game Over')
     document.getElementById('move1').style.top = '745'
     document.getElementById('move1').style.left = '40'
-    location = 'https://midnightwolfe.github.io/Game-Dev-2018/T4-Final-Project-Kaiya.html'
+    location = 'file:///H:/Documents/Final%20Project/T4-Final-Project-Kaiya.html' //https://midnightwolfe.github.io/Game-Dev-2018/T4-Final-Project-Kaiya.html
 
     }
 
@@ -192,7 +192,7 @@ function checkAll(){
 
   if (myHitOther('bullet1','move2')) {
     
-    document.getElementById('myShowDiv3').innerHTML = 'The bullet hit move 2'
+    //document.getElementById('myShowDiv3').innerHTML = 'The bullet hit move 2'
     document.getElementById('bullet1').style.visibility = 'hidden'
     document.getElementById('move2').style.visibility = 'hidden'
     document.getElementById('move2').style.left = '-20'
@@ -206,54 +206,65 @@ function checkAll(){
 
   if(myHitOther('move1','move8')){
     score += 1
-    document.getElementById('move8').style.visibility = 'hidden'
-   
+    document.getElementById('move8').style.visibility = 'hidden'   
+    }   
+  if(score >=1){
+    document.getElementById('myShowDiv3').innerHTML = 'Score = 1'   
     } 
 
  
   if(myHitOther('move1','move10')){
-    score += 2
-    document.getElementById('move10').style.visibility = 'hidden'
-   
-    } 
+    score += 1
+    document.getElementById('move10').style.visibility = 'hidden'   
+    }   
+  if(score >=2){
+    document.getElementById('myShowDiv3').innerHTML = 'Score = 2'  
+    }
+ 
   
   if(myHitOther('move1','move11')){
-    score += 3
-    document.getElementById('move11').style.visibility = 'hidden'
-   
+    score += 2
+    document.getElementById('move11').style.visibility = 'hidden' 
+    }
+  if(score >=3){
+    document.getElementById('myShowDiv3').innerHTML = 'Score = 3'  
     }
 
 
   if(myHitOther('move1','move12')){
     score += 4
-    document.getElementById('move12').style.visibility = 'hidden'
-   
-    } 
-
+    document.getElementById('move12').style.visibility = 'hidden' 
+    }
+  if(score >=4){
+    document.getElementById('myShowDiv3').innerHTML = 'Score = 4'   
+    }
 
 
   if(myHitOther('move1','move13')){
     score += 5
     document.getElementById('move13').style.visibility = 'hidden'
-   
-    } 
-
+    }
+  if(score >=5){
+    document.getElementById('myShowDiv3').innerHTML = 'Score = 5'  
+    }
 
 
   if(myHitOther('move1','move14')){
     score += 6
     document.getElementById('move14').style.visibility = 'hidden'
-   
-    } 
+    }
+   if(score >=6){
+    document.getElementById('myShowDiv3').innerHTML = 'Score = 6'  
+    }  
 
-  
 
   if(myHitOther('move1','move15')){
     score += 7
-    document.getElementById('move15').style.visibility = 'hidden'
-   
-    } 
-
+    document.getElementById('move15').style.visibility = 'hidden'  
+    }
+  if(score >=7){
+    document.getElementById('myShowDiv3').innerHTML = 'Score = 7'  
+    }
 
 
 
