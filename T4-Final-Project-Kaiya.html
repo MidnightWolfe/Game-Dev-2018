@@ -2,27 +2,22 @@
 <html>
 <script>
 
-//Global variables here
 
-myBgPosY = 0; // present vertical position
+myBgPosY = 0; 
 
-myBgPosX = 0; // present horizonal position
+myBgPosX = 0; 
 
-myBgHeight = 402; // height of background image
+myBgHeight = 402; 
 
-myBgWidth = 753; // width of background image
+myBgWidth = 753; 
 
-myBgSpeedYdown = 0; // speed moving down
+myBgSpeedYdown = 0; 
 
-myBgSpeedXright = -1; // speed moving right
+myBgSpeedXright = 0; 
 
   var score = 0;
   var LifePoints = 40;
 
-
-<!-- ******************** Background Scrolling ************************** -->
-
-// myScroll function controls the moving of the background image
 
 function myScroll() {
 
@@ -46,9 +41,6 @@ myBgObject.style.backgroundPosition = myBgPosX+" " + myBgPosY;
 
 }
 
-// ******************** Object Detection Starts below ************************** -->
-
-// myHitXY function determines if any object has hit an x, y location. Note it is better to use the myHitOther function
 
 function myHitXY(my1,X,Y){
 
@@ -74,7 +66,7 @@ return true
 
 }
 
-// myHitOther function determines if two obejcts have hit each other.
+
 
 function myHitOther(my1,my2){
 
@@ -107,17 +99,6 @@ return true
 }
 
 }
-
-
-function mySolid(move3){
- 
-
-
-
-
-
-}
-
 
 
 
@@ -177,14 +158,14 @@ function checkAll(){
     LifePoints = -1
     //document.getElementById('myShowDiv3').innerHTML = 'You hit move 2'
    
-    } else {document.getElementById('myShowDiv3').innerHTML = ''}
+    } //else {document.getElementById('myShowDiv3').innerHTML = ''}
 
 
   if (LifePoints <= 0) {
     alert('Game Over')
     document.getElementById('move1').style.top = '745'
     document.getElementById('move1').style.left = '40'
-    location = 'file:///H:/Documents/Final%20Project/T4-Final-Project-Kaiya.html' //https://midnightwolfe.github.io/Game-Dev-2018/T4-Final-Project-Kaiya.html
+    location = 'https://midnightwolfe.github.io/Game-Dev-2018/T4-Final-Project-Kaiya.html' //https://midnightwolfe.github.io/Game-Dev-2018/T4-Final-Project-Kaiya.html
 
     }
 
@@ -267,15 +248,11 @@ function checkAll(){
     }
 
 
-
-
   if (score >= 7, myHitOther('move1', 'move9')) {
     alert('You win')
     location = 'https://www.google.ca/?safe=active&ssui=on'
 
     }
-
-
 
 
   if(myHitXY('move1','0','745')){
@@ -295,7 +272,6 @@ function checkAll(){
     document.getElementById('move1').style.top = '590'
    
     }
-
  
 
   if(myHitXY('move1','580','455')){
@@ -322,7 +298,7 @@ function checkAll(){
 
 
 
-// ******************** Object Motion Below ************************** -->
+
 
 
 
@@ -556,7 +532,7 @@ document.getElementById('myInstructions').style.visibility = 'hidden'}
 
 
 
-<div id="myShowDiv3" style="width:300px; background-color:white">out 3</div>
+<div id="myShowDiv3" style="width:300px; background-color:white">Score = 0</div>
 
 
 
@@ -564,11 +540,6 @@ document.getElementById('myInstructions').style.visibility = 'hidden'}
 
 
 
-<input type=button value="Auto Right" onClick="{
-
-document.mySpeedX += 4
-
-}">
 
 <input type=button value="Auto Left" onClick="{
 
@@ -581,7 +552,18 @@ document.mySpeedX += -4
 
 <input type=button value="Back" style="font-size:25px" onclick="{window.history.back()}"><br><br>
 
+
+
+
+
 </html>
+
+
+
+
+
+
+
 
 
 
