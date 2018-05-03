@@ -2,26 +2,26 @@
 <html>
 <script>
 
-//Global variables here
 
-myBgPosY = 0; // present vertical position
 
-myBgPosX = 0; // present horizonal position
+myBgPosY = 0; 
 
-myBgHeight = 402; // height of background image
+myBgPosX = 0; 
 
-myBgWidth = 753; // width of background image
+myBgHeight = 402; 
 
-myBgSpeedYdown = 0; // speed moving down
+myBgWidth = 753; 
 
-myBgSpeedXright = 0; // speed moving right
+myBgSpeedYdown = 0; 
+
+myBgSpeedXright = 0; 
 
   var score = 0;
   var LifePoints = 40;
 
 
 
-// myScroll function controls the moving of the background image
+
 
 function myScroll() {
 
@@ -160,16 +160,15 @@ function checkAll(){
 
   if(myHitOther('move1','move2')){
     LifePoints = -1
-    //document.getElementById('myShowDiv3').innerHTML = 'You hit move 2'
    
-    } //else {document.getElementById('myShowDiv3').innerHTML = ''}
+    } 
 
 
   if (LifePoints <= 0) {
     alert('Game Over')
     document.getElementById('move1').style.top = '745'
     document.getElementById('move1').style.left = '40'
-    location = 'file:///H:/Documents/Final%20Project/T4-Final-Project-Kaiya.html' //https://midnightwolfe.github.io/Game-Dev-2018/T4-Final-Project-Kaiya.html
+    location = 'https://midnightwolfe.github.io/Game-Dev-2018/T4-Final-Project-Kaiya.html' //https://midnightwolfe.github.io/Game-Dev-2018/T4-Final-Project-Kaiya.html
 
     }
 
