@@ -2,22 +2,26 @@
 <html>
 <script>
 
+//Global variables here
 
-myBgPosY = 0; 
+myBgPosY = 0; // present vertical position
 
-myBgPosX = 0; 
+myBgPosX = 0; // present horizonal position
 
-myBgHeight = 402; 
+myBgHeight = 402; // height of background image
 
-myBgWidth = 753; 
+myBgWidth = 753; // width of background image
 
-myBgSpeedYdown = 0; 
+myBgSpeedYdown = 0; // speed moving down
 
-myBgSpeedXright = 0; 
+myBgSpeedXright = 0; // speed moving right
 
   var score = 0;
   var LifePoints = 40;
 
+
+
+// myScroll function controls the moving of the background image
 
 function myScroll() {
 
@@ -165,7 +169,7 @@ function checkAll(){
     alert('Game Over')
     document.getElementById('move1').style.top = '745'
     document.getElementById('move1').style.left = '40'
-    location = 'https://midnightwolfe.github.io/Game-Dev-2018/T4-Final-Project-Kaiya.html' //https://midnightwolfe.github.io/Game-Dev-2018/T4-Final-Project-Kaiya.html
+    location = 'file:///H:/Documents/Final%20Project/T4-Final-Project-Kaiya.html' //https://midnightwolfe.github.io/Game-Dev-2018/T4-Final-Project-Kaiya.html
 
     }
 
@@ -314,7 +318,7 @@ document.mySpeedY = 0;
 function myAuto(){
 
 
- if(parseInt(document.getElementById('move2').style.left) > '825' ){
+ if(parseInt(document.getElementById('move2').style.left) > '885' ){
 
      document.mySpeedX *= -1
 
@@ -473,7 +477,7 @@ document.getElementById('myInstructions').style.visibility = 'hidden'}
 
  <img id="move1" src="http://jrbaldwin.com/wp-content/uploads/2014/03/cat.gif" style="position:absolute; width:60px; height:50px; left:10px; top:745px" onClick="myGunPrep()">
 
- <img id="move2" src="https://cdna.artstation.com/p/assets/images/images/006/112/916/original/hoon-kim-wolf.gif?1496148866" style="position:absolute; width:80px; height:80px; left:825px; top:497px;"/>
+ <img id="move2" src="https://cdna.artstation.com/p/assets/images/images/006/112/916/original/hoon-kim-wolf.gif?1496148866" style="position:absolute; width:80px; height:80px; left:885px; top:497px;"/>
 
 
 
@@ -486,13 +490,14 @@ document.getElementById('myInstructions').style.visibility = 'hidden'}
 
  <img id="move5" src="https://phaser.io/content/tutorials/coding-tips-003/platform.png" style="position:absolute; width:120px; height:50px; left:525px; top:635px;"/>
 
- <img id="move6" src="https://phaser.io/content/tutorials/coding-tips-003/platform.png" style="position:absolute; width:200px; height:50px; left:690px; top:575px;"/>
+ <img id="move6" src="https://phaser.io/content/tutorials/coding-tips-003/platform.png" style="position:absolute; width:260px; height:50px; left:690px; top:575px;"/>
 
  <img id="move7" src="https://phaser.io/content/tutorials/coding-tips-003/platform.png" style="position:absolute; width:160px; height:50px; left:440px; top:500px;"/>
 
  <img id="move7" src="https://phaser.io/content/tutorials/coding-tips-003/platform.png" style="position:absolute; width:160px; height:50px; left:700px; top:380px;"/>
 
  <img id="move7" src="https://phaser.io/content/tutorials/coding-tips-003/platform.png" style="position:absolute; width:180px; height:50px; left:290px; top:380px;"/>
+ 
 
 
 
@@ -529,9 +534,6 @@ document.getElementById('myInstructions').style.visibility = 'hidden'}
 
 
 
-
-
-
 <div id="myShowDiv3" style="width:300px; background-color:white">Score = 0</div>
 
 
@@ -557,14 +559,6 @@ document.mySpeedX += -4
 
 
 </html>
-
-
-
-
-
-
-
-
 
 
 
