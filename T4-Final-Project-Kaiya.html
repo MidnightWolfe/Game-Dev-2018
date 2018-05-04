@@ -4,11 +4,11 @@
 
 
 
-myBgPosY = 0; 
+myBgPosY = 0;
 
 myBgPosX = 0; 
 
-myBgHeight = 402; 
+myBgHeight = 402;
 
 myBgWidth = 753; 
 
@@ -18,7 +18,6 @@ myBgSpeedXright = 0;
 
   var score = 0;
   var LifePoints = 40;
-
 
 
 
@@ -158,17 +157,66 @@ function checkAll(){
 
 
 
+if(myHitXY('move16','85','745')){
+    document.getElementById('move16').style.left = '195'
+    document.getElementById('move16').style.top = '685'
+   
+    }
+
+  if(myHitXY('move16','375','685')){
+    document.getElementById('move16').style.left = '510'
+    document.getElementById('move16').style.top = '590'
+   
+    }
+
+  
+  if(myHitXY('move16','595','590')){
+    document.getElementById('move16').style.left = '720'
+    document.getElementById('move16').style.top = '530'
+   
+    }
+   
+   
+  if(myHitXY('move16','670','530')){
+    document.getElementById('move16').style.left = '535'
+    document.getElementById('move16').style.top = '455'
+   
+    }
+
+   
+  if(myHitXY('move16','420','455')){
+    document.getElementById('move16').style.left = '275'
+    document.getElementById('move16').style.top = '335'
+   
+    }
+
+  if(myHitXY('move16','415','335')){
+    document.getElementById('move16').style.left = '680'
+    document.getElementById('move16').style.top = '335'
+   
+    }
+
+
+
+
   if(myHitOther('move1','move2')){
     LifePoints = -1
-   
+       
     } 
+
+  if(myHitOther('move16','move2')){
+    LifePoints = -1
+       
+    }
 
 
   if (LifePoints <= 0) {
     alert('Game Over')
     document.getElementById('move1').style.top = '745'
     document.getElementById('move1').style.left = '40'
-    location = 'https://midnightwolfe.github.io/Game-Dev-2018/T4-Final-Project-Kaiya.html' //https://midnightwolfe.github.io/Game-Dev-2018/T4-Final-Project-Kaiya.html
+    document.getElementById('move16').style.top = '745'
+    document.getElementById('move16').style.left = '40'
+    location = 'file:///H:/Documents/Final%20Project/T4-Final-Project-Kaiya.html' //https://midnightwolfe.github.io/Game-Dev-2018/T4-Final-Project-Kaiya.html
 
     }
 
@@ -176,7 +224,6 @@ function checkAll(){
 
   if (myHitOther('bullet1','move2')) {
     
-    //document.getElementById('myShowDiv3').innerHTML = 'The bullet hit move 2'
     document.getElementById('bullet1').style.visibility = 'hidden'
     document.getElementById('move2').style.visibility = 'hidden'
     document.getElementById('move2').style.left = '-20'
@@ -224,7 +271,7 @@ function checkAll(){
     }
 
 
-  if(myHitOther('move1','move13')){
+  if(myHitOther('move16','move13')){
     score += 5
     document.getElementById('move13').style.visibility = 'hidden'
     }
@@ -233,7 +280,7 @@ function checkAll(){
     }
 
 
-  if(myHitOther('move1','move14')){
+  if(myHitOther('move16','move14')){
     score += 6
     document.getElementById('move14').style.visibility = 'hidden'
     }
@@ -256,6 +303,8 @@ function checkAll(){
     location = 'https://www.google.ca/?safe=active&ssui=on'
 
     }
+
+
 
 
   if(myHitXY('move1','0','745')){
@@ -297,6 +346,46 @@ function checkAll(){
 
 
 
+
+  if(myHitXY('move16','0','745')){
+    document.getElementById('move16').style.left = '10'
+    document.getElementById('move16').style.top = '745'
+   
+    }
+
+  if(myHitXY('move16','180','685')){
+    document.getElementById('move16').style.left = '195'
+    document.getElementById('move16').style.top = '685'
+   
+    }
+
+  if(myHitXY('move16','490','590')){
+    document.getElementById('move16').style.left = '505'
+    document.getElementById('move16').style.top = '590'
+   
+    }
+ 
+
+  if(myHitXY('move16','580','455')){
+    document.getElementById('move16').style.left = '525'
+    document.getElementById('move16').style.top = '455'
+   
+    }
+
+  if(myHitXY('move16','255','335')){
+    document.getElementById('move16').style.left = '275'
+    document.getElementById('move16').style.top = '335'
+   
+    }
+
+  if(myHitXY('move16','645','335')){
+    document.getElementById('move16').style.left = '690'
+    document.getElementById('move16').style.top = '335'
+   
+    }
+
+
+
 }
 
 
@@ -310,6 +399,7 @@ function checkAll(){
 document.mySpeedX = 0;
 
 document.mySpeedY = 0;
+
 
 
 
@@ -398,28 +488,38 @@ document.getElementById('bullet1').style.left = parseInt(document.getElementById
 
 <body background="https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/8/8a/S7e4_close_forest.png/revision/latest?cb=20151108205609" onload="myTimer = setInterval('myScroll()', 100)" onkeydown="{
 
-if(event.keyCode==65){ document.getElementById('move1').style.left = parseInt(document.getElementById('move1').style.left)-5+'px'} //  'a' key go left 65
+if(event.keyCode==65){ document.getElementById('move1').style.left = parseInt(document.getElementById('move1').style.left)-5+'px'}
+if(event.keyCode==65){ document.getElementById('move16').style.left = parseInt(document.getElementById('move16').style.left)-5+'px'} //  'a' key go left 65
+if(event.keyCode==65){ document.getElementById('move16').style.visibility = 'visible'}
+if(event.keyCode==65){ document.getElementById('move1').style.visibility = 'hidden'}
 
 //if(event.keyCode==87){ document.getElementById('move1').style.top = parseInt(document.getElementById('move1').style.top)-5+'px'}   //  'w' key go up 87
 
 //if(event.keyCode==83){ document.getElementById('move1').style.top = parseInt(document.getElementById('move1').style.top)+5+'px'} //  's' key go down 83
 
-if(event.keyCode==68){ document.getElementById('move1').style.left = parseInt(document.getElementById('move1').style.left)+5+'px'} //  'd' key go right 68
-
+if(event.keyCode==68){ document.getElementById('move1').style.left = parseInt(document.getElementById('move1').style.left)+5+'px'}
+if(event.keyCode==68){ document.getElementById('move16').style.left = parseInt(document.getElementById('move16').style.left)+5+'px'} //  'd' key go right 68
+if(event.keyCode==68){ document.getElementById('move16').style.visibility = 'hidden'}
+if(event.keyCode==68){ document.getElementById('move1').style.visibility = 'visible'}
 
 
 if(event.keyCode==32){ myGunPrep()} // space to shoot 
 
 
 
-if(event.keyCode==37){ document.getElementById('move1').style.left = parseInt(document.getElementById('move1').style.left)-5+'px'} 
+if(event.keyCode==37){ document.getElementById('move1').style.left = parseInt(document.getElementById('move1').style.left)-5+'px'}
+if(event.keyCode==37){ document.getElementById('move16').style.left = parseInt(document.getElementById('move16').style.left)-5+'px'} 
+if(event.keyCode==37){ document.getElementById('move16').style.visibility = 'visible'}
+if(event.keyCode==37){ document.getElementById('move1').style.visibility = 'hidden'}
 
 //if(event.keyCode==38){ document.getElementById('move1').style.top = parseInt(document.getElementById('move1').style.top)-5+'px'} 
 
 //if(event.keyCode==40){ document.getElementById('move1').style.top = parseInt(document.getElementById('move1').style.top)+5+'px'} 
 
-if(event.keyCode==39){ document.getElementById('move1').style.left = parseInt(document.getElementById('move1').style.left)+5+'px'} 
-
+if(event.keyCode==39){ document.getElementById('move1').style.left = parseInt(document.getElementById('move1').style.left)+5+'px'}
+if(event.keyCode==39){ document.getElementById('move16').style.left = parseInt(document.getElementById('move16').style.left)+5+'px'} 
+if(event.keyCode==39){ document.getElementById('move16').style.visibility = 'hidden'}
+if(event.keyCode==39){ document.getElementById('move1').style.visibility = 'visible'}
  
 }">
 
@@ -475,6 +575,10 @@ document.getElementById('myInstructions').style.visibility = 'hidden'}
 
 
  <img id="move1" src="http://jrbaldwin.com/wp-content/uploads/2014/03/cat.gif" style="position:absolute; width:60px; height:50px; left:10px; top:745px" onClick="myGunPrep()">
+
+ <img id="move16" src="http://jrbaldwin.com/wp-content/uploads/2014/03/cat.gif" style="position:absolute; width:60px; height:50px; left:10px; top:745px; display:inline-block; transform:scale(-1,1); -webkit-transform:scale(-1,1); -moz-transfrom:scale(-1,1); -o-transform:scale(-1,1); visibility:hidden" onClick="myGunPrep()">
+
+
 
  <img id="move2" src="https://cdna.artstation.com/p/assets/images/images/006/112/916/original/hoon-kim-wolf.gif?1496148866" style="position:absolute; width:80px; height:80px; left:885px; top:497px;"/>
 
