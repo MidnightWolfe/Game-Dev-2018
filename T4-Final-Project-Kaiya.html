@@ -299,7 +299,8 @@ if(myHitXY('move16','85','745')){
 
 
   if (score >= 7, myHitOther('move1', 'move9')) {
-    alert('You win')
+     //alert('You win')
+    document.getElementById('myShowDiv3').innerHTML = 'You win, on to the next level.'  
     location = 'https://www.google.ca/?safe=active&ssui=on'
 
     }
@@ -401,9 +402,6 @@ document.mySpeedX = 0;
 document.mySpeedY = 0;
 
 
-
-
-
 function myAuto(){
 
 
@@ -419,8 +417,6 @@ function myAuto(){
 
             }
 
-
-
    document.getElementById('move2').style.left = parseInt(document.getElementById('move2').style.left)+document.mySpeedX+'px'
 
 
@@ -431,9 +427,6 @@ function myAuto(){
  //document.getElementById('myShowDiv1').innerHTML = 'move1 x='+parseInt(document.getElementById('move1').style.left) +
 
 //', y='+parseInt(document.getElementById('move1').style.top)
-
-
-
 
 //document.getElementById('myShowDiv2').innerHTML = 'move2 x='+parseInt(document.getElementById('move2').style.left) +
 
