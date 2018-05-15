@@ -20143,11 +20143,13 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Keyboard.prototype.cnds.IsKeyDown,
 	cr.behaviors.Platform.prototype.acts.SimulateControl,
 	cr.plugins_.Sprite.prototype.cnds.IsOutsideLayout,
-	cr.system_object.prototype.acts.RestartLayout,
+	cr.system_object.prototype.acts.GoToLayout,
 	cr.system_object.prototype.acts.SetVar,
 	cr.plugins_.Sprite.prototype.cnds.OnCollision,
 	cr.behaviors.Fade.prototype.acts.StartFade,
 	cr.system_object.prototype.acts.AddVar,
 	cr.plugins_.Sprite.prototype.acts.Destroy,
-	cr.plugins_.Sprite.prototype.acts.SetPos
+	cr.plugins_.Sprite.prototype.acts.SetPos,
+	cr.system_object.prototype.acts.RestartLayout,
+	cr.system_object.prototype.acts.NextPrevLayout
 ];};

@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1526329191,
+	"version": 1526407398,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -17,6 +17,8 @@
 		"images/bullet-sheet0.png",
 		"images/goldorb-sheet0.png",
 		"images/enemy2-sheet0.png",
+		"images/cloud-sheet0.png",
+		"images/blackorb-sheet0.png",
 		"icon-16.png",
 		"icon-32.png",
 		"icon-114.png",
