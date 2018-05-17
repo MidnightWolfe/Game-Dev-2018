@@ -20142,6 +20142,7 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Sprite.prototype.acts.SetAnim,
 	cr.plugins_.Keyboard.prototype.cnds.IsKeyDown,
 	cr.behaviors.Platform.prototype.acts.SimulateControl,
+	cr.behaviors.Platform.prototype.acts.FallThrough,
 	cr.plugins_.Sprite.prototype.cnds.IsOutsideLayout,
 	cr.system_object.prototype.acts.GoToLayout,
 	cr.system_object.prototype.acts.SetVar,
