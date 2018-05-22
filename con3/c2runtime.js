@@ -20154,6 +20154,5 @@ cr.getObjectRefTable = function () { return [
 	cr.system_object.prototype.acts.AddVar,
 	cr.plugins_.Sprite.prototype.acts.Destroy,
 	cr.plugins_.Sprite.prototype.acts.SetPos,
-	cr.system_object.prototype.acts.RestartLayout,
 	cr.system_object.prototype.acts.NextPrevLayout
 ];};
