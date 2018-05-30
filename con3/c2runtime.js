@@ -20154,5 +20154,14 @@ cr.getObjectRefTable = function () { return [
 	cr.system_object.prototype.acts.AddVar,
 	cr.plugins_.Sprite.prototype.acts.Destroy,
 	cr.plugins_.Sprite.prototype.acts.SetPos,
-	cr.system_object.prototype.acts.NextPrevLayout
+	cr.plugins_.Sprite.prototype.acts.SubInstanceVar,
+	cr.system_object.prototype.acts.SubVar,
+	cr.plugins_.Sprite.prototype.cnds.CompareInstanceVar,
+	cr.plugins_.Sprite.prototype.acts.SetTowardPosition,
+	cr.plugins_.Sprite.prototype.exps.X,
+	cr.plugins_.Sprite.prototype.exps.Y,
+	cr.plugins_.Text.prototype.acts.SetVisible,
+	cr.system_object.prototype.cnds.Every,
+	cr.system_object.prototype.acts.NextPrevLayout,
+	cr.plugins_.Sprite.prototype.cnds.OnDestroyed
 ];};

@@ -1,5 +1,5 @@
 ﻿CACHE MANIFEST
-#1527109512
+#1527702957
 data.js
 c2runtime.js
 jquery-2.1.1.min.js
@@ -19,6 +19,20 @@ images/enemy2-sheet0.png
 images/cloud-sheet0.png
 images/blackorb-sheet0.png
 images/brownorb-sheet0.png
+images/greenorb-sheet0.png
+images/tiledbackground2.png
+images/enemy3-sheet0.png
+images/enemy3-sheet1.png
+images/sprite3-sheet0.png
+images/platform3-sheet0.png
+images/greyorb-sheet0.png
+images/background2-sheet0.png
+images/boss-sheet0.png
+images/boss-sheet1.png
+images/enemy4-sheet0.png
+images/fireball-sheet0.png
+images/fireball-sheet1.png
+images/fireball-sheet2.png
 icon-16.png
 icon-32.png
 icon-114.png
