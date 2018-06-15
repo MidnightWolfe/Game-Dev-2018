@@ -157,7 +157,7 @@ function checkAll(){
 
 
 
-if(myHitXY('move16','85','745')){
+  if(myHitXY('move16','85','745')){
     document.getElementById('move16').style.left = '195'
     document.getElementById('move16').style.top = '685'
    
@@ -216,7 +216,7 @@ if(myHitXY('move16','85','745')){
     document.getElementById('move1').style.left = '40'
     document.getElementById('move16').style.top = '745'
     document.getElementById('move16').style.left = '40'
-    location = 'https://midnightwolfe.github.io/Game-Dev-2018/T4-Final-Project-Kaiya.html' //https://midnightwolfe.github.io/Game-Dev-2018/T4-Final-Project-Kaiya.html
+    location = 'file:///H:/Documents/Final%20Project/T4-Final-Project-Kaiya.html' //https://midnightwolfe.github.io/Game-Dev-2018/T4-Final-Project-Kaiya.html
 
     }
 
@@ -224,15 +224,17 @@ if(myHitXY('move16','85','745')){
 
   if (myHitOther('bullet1','move2')) {
     
+    
     document.getElementById('bullet1').style.visibility = 'hidden'
     document.getElementById('move2').style.visibility = 'hidden'
     document.getElementById('move2').style.left = '-20'
     document.getElementById('move2').style.top = '-20'
     document.getElementById('bullet1').style.left = '-200px'
     clearInterval(document.myShot)
+   
         
     }
-
+ 
 
 
   if(myHitOther('move1','move8')){
@@ -301,7 +303,8 @@ if(myHitXY('move16','85','745')){
   if (score >= 7, myHitOther('move1', 'move9')) {
      //alert('You win')
     document.getElementById('myShowDiv3').innerHTML = 'You win, on to the next level.'  
-    location = 'https://midnightwolfe.github.io/Game-Dev-2018/con3/' //https://www.google.ca/?safe=active&ssui=on 
+    location = 'https://www.google.ca/?safe=active&ssui=on'
+
     }
 
 
@@ -396,7 +399,7 @@ if(myHitXY('move16','85','745')){
 
 
 
-document.mySpeedX = 0;
+document.mySpeedX = 3;
 
 document.mySpeedY = 0;
 
@@ -406,13 +409,13 @@ function myAuto(){
 
  if(parseInt(document.getElementById('move2').style.left) > '885' ){
 
-     document.mySpeedX *= -1
+     document.mySpeedX += -1
 
             }
 
  if(parseInt(document.getElementById('move2').style.left) < '670' ){
 
-     document.mySpeedX += 2
+     document.mySpeedX += 1
 
             }
 
@@ -546,8 +549,6 @@ document.getElementById('myInstructions').style.visibility = 'hidden'}
 
 <li> Standing on the edge of a platform moves you to the next
 
-<li> Click the Automove button to make the wolf move if you so choose
-
 <li> Hit the wolf to destroy it
 
 <li> Hitting the wolf with the cat will restart the level
@@ -638,12 +639,6 @@ document.getElementById('myInstructions').style.visibility = 'hidden'}
 
 
 
-<input type=button value="Auto Left" onClick="{
-
-document.mySpeedX += -4
-
-}">
-
 <br>
 <br>
 
@@ -654,12 +649,4 @@ document.mySpeedX += -4
 
 
 </html>
-
-
-
-
-
-
-
-
 
